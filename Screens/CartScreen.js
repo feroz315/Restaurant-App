@@ -58,7 +58,7 @@ export default function BasketScreen() {
      {/* delivery time */}
       <View style={tw`flex-row px-4 items-center bg-pink-100`}>
             <Image source={require('../assets/icons/bikeGuy.png')} style={tw`w-20 h-20 rounded-full`} />
-            <Text style={tw`flex-1 pl-4`}>Deliver in 20-30 minutes</Text>
+            <Text style={tw`flex-1 pl-4`}>Deliver in 35-45 minutes</Text>
             <TouchableOpacity>
                 <Text style={{color: themeColors.text,fontWeight:'400'}}>Change</Text>
             </TouchableOpacity>

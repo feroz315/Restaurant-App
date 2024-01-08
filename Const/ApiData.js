@@ -17,56 +17,21 @@ export const restaurantrecipe = {
             category: 'Food ',
     Tables: [
                {
-                  person: 10,
+                  person: "person- 10",
                   image: require('../assets/images/avatar1.jpg'),
                   reserve:"Booked"
-
-               },
-               {
-                  person: 9,
-                  image: require('../assets/images/avatar1.jpg'),
-
-               },
-               {
-                  person: 8,
-                  image: require('../assets/images/avatar1.jpg'),
-
-               },
-              
-               {
-                  person: 7,
-                  image: require('../assets/images/avatar1.jpg'),
-
-               },
-               {
-                  person: 6,
-                  image: require('../assets/images/avatar1.jpg'),
-
-               },
-              
-               {
-                  person: 5,
-                  image: require('../assets/images/avatar1.jpg'),
-
-               },
-               {
-                  person: 4,
-                  image: require('../assets/images/avatar1.jpg'),
-
                },
                {
                   person: 3,
                   image: require('../assets/images/avatar1.jpg'),
-
                },
                {
                   person: 2,
                   image: require('../assets/images/avatar1.jpg'),
-
                },
           
-               ],
-       dishes: [
+            ],
+    dishes: [
                 {
                    id: 1,
                    name: 'mexican',
@@ -102,6 +67,22 @@ export const restaurantrecipe = {
             stars: 4,
             reviews: '4.4k',
             category: 'Hot and Spicy',
+            Tables: [
+               {
+                  person: "person- 10",
+                  image: require('../assets/images/avatar1.jpg'),
+                  reserve:"Booked"
+               },
+               {
+                  person: 3,
+                  image: require('../assets/images/avatar1.jpg'),
+               },
+               {
+                  person: 2,
+                  image: require('../assets/images/avatar1.jpg'),
+               },
+          
+            ],
             dishes: [
                 {
                    id: 1,
@@ -138,6 +119,34 @@ export const restaurantrecipe = {
             stars: 4,
             reviews: '4.4k',
             category: 'Healthy Food',
+            Tables: [
+               {
+                  person: "10 \n person",
+                  image: require('../assets/icons/kindpng_43048.png'),
+               },
+               {
+                  person: 3,
+                  image: require('../assets/icons/NicePng_kitchen-table-png_9008414.png'),
+               },
+               {
+                  person: 2,
+                  image: require('../assets/icons/images.jpg'),
+               },
+               {
+                  person: 3,
+                  image: require('../assets/icons/download.jpg'),
+               },
+               {
+                  person: 3,
+                  image: require('../assets/icons/download2.jpg'),
+               },
+               {
+                  person: 3,
+                  image: require('../assets/icons/download3.jpg'),
+               },
+            
+          
+            ],
             dishes: [
                 {
                    id: 1,
@@ -174,6 +183,22 @@ export const restaurantrecipe = {
          stars: 4,
          reviews: '4.4k',
          category: 'Healthy Food',
+         Tables: [
+            {
+               person: "person- 10",
+               image: require('../assets/images/avatar1.jpg'),
+               reserve:"Booked"
+            },
+            {
+               person: 3,
+               image: require('../assets/images/avatar1.jpg'),
+            },
+            {
+               person: 2,
+               image: require('../assets/images/avatar1.jpg'),
+            },
+       
+         ],
          dishes: [
              {
                 id: 1,
@@ -210,6 +235,22 @@ export const restaurantrecipe = {
          stars: 4,
          reviews: '4.4k',
          category: 'delicious Food',
+         Tables: [
+            {
+               person: "person- 10",
+               image: require('../assets/images/avatar1.jpg'),
+               reserve:"Booked"
+            },
+            {
+               person: 3,
+               image: require('../assets/images/avatar1.jpg'),
+            },
+            {
+               person: 2,
+               image: require('../assets/images/avatar1.jpg'),
+            },
+       
+         ],
          dishes: [
              {
                 id: 1,

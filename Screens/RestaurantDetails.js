@@ -1,5 +1,5 @@
 import { View, Text,  ScrollView, Image, TouchableOpacity } from 'react-native';
-import React, { useEffect} from 'react';
+import React, { useEffect,useState} from 'react';
 import { useNavigation, } from '@react-navigation/native';
 import DishRow from '../Const/DishesRow';
 import BasketIcon from '../Const/BasketIcon';
@@ -8,8 +8,9 @@ import { addresturant } from '../ReduxFolder/RestaurantSlice';
 import * as Icon from "react-native-feather";
 import { themeColors } from '../Styles/theme';
 import { s as tw } from "react-native-wind";
-import { COLORS } from '../Const/theme';
 import Reservations from '../Const/Reservation';
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
+import { COLORS,SIZES,FONTS} from '../Const/theme';
 
 
 
@@ -18,12 +19,20 @@ const ResturantDetails = ({route}) => {
     const navigation = useNavigation();
     let dispatch = useDispatch();
     let item = route.params;
-     
+       
+    const [active, setActive] = useState(false);
+    // let activeButtonClass = item ? COLORS.primary : COLORS.darkgray ; 
+
+    // const handleClick = () => {
+    //   setActive(!active);
+    // };
+  
     useEffect(()=>{
         if(item && item.id){
         dispatch(addresturant({...item}))
         }
     },[])
+
   return (
     <>
         <BasketIcon />
@@ -57,17 +66,42 @@ const ResturantDetails = ({route}) => {
                             <Text style={tw`text-gray-800 text-xs`}> Nearby · {item.address}</Text>
                         </View>
                     </View>
-                    <Text style={tw`text-gray-500 mt-2`}>{item.description}</Text>                 
                 </View>
-                
             </View>
 
         <View style={tw`pb-36 bg-white`}>
-            <Text style={tw`px-4 py-4 text-2xl font-bold`}>Reservation</Text>
+            <Text style={tw`px-4 py-4 text-2xl font-bold`}>Reservations</Text>
+            <ScrollView
+    horizontal
+    showsHorizontalScrollIndicator={false}
+    contentContainerStyle={{
+    paddingHorizontal:10,
+      }}>
+    
             {/* Table Reservation */}
             {
-                item?.Tables.map((table,index) => <Reservations item={{...table}} key={index}/>)                    
+                item.Tables?.map((item,index) => {
+                    return(
+                        <TouchableOpacity
+                            onPress={() => setActive(index)}
+                            style={{
+                                backgroundColor: index === active ? COLORS.primary : null, 
+                                borderRadius: 15,alignItems:'center',padding:3}}>
+                               <View style={tw`rounded-2xl`}>
+                                <Image
+                                    source={item.image}
+                                    style={{ width: hp(9), height: hp(7), borderRadius: 40 }}
+                                />
+                            </View>
+                            <Text style={{ fontSize: hp(2.2), fontWeight: '700', marginTop: 5 }}>
+                                {item.person}
+                            </Text>
+                        </TouchableOpacity>
+
+                    )
+                })                  
             }
+            </ScrollView>
             </View>
             
             <View style={tw`pb-36 bg-white`}>

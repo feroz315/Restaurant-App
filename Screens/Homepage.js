@@ -26,8 +26,6 @@ const auth = FirebaseAuth;
 const navigation = useNavigation();
 
 
-
-
 useEffect(() => {
 getCategories()
 getRecipes()
@@ -96,7 +94,7 @@ return (
               {/* search bar */}
               <Search />
           <BellIcon size={hp(4)} color="gray" />       
-       </View>
+     </View>
               
 {/* Categories Data  */ }     
     <View style={style.view_container}>
@@ -130,7 +128,6 @@ return (
  <View style={style.headinglist}>
 <RecipesList meals={meals} categories={categories} />
  </View>
-
 </ScrollView>
 </View>
 
