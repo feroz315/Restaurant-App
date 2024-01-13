@@ -17,6 +17,7 @@ import BasketScreen from './CartScreen';
 import CreditCardForm from './CreditCard';
 import SignOut from './SignOut';
 import DishRow from '../Const/DishesRow';
+import CategoriesDetails from './CategoriesDetails';
 
 
 
@@ -43,7 +44,8 @@ return (
          <Stack.Screen name="BasketScreen" component={BasketScreen} />
          <Stack.Screen name="SignOut" component={SignOut} />
          <Stack.Screen name="DishRow" component={DishRow} />
-         
+         <Stack.Screen name="CategoriesDetails" component={CategoriesDetails} />
+
    
          </Stack.Navigator>
     </NavigationContainer>

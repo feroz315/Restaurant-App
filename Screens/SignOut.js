@@ -32,16 +32,8 @@ const navigation = useNavigation();
   return (
 
     <View style={styles.centeredView}>
-  <View style={tw`relative`}>
-    <Image style={tw`w-full h-72`} source={require('../assets/icons/star.png')} />
-    <TouchableOpacity 
-        onPress={()=>navigation.goBack()} 
-        style={tw`absolute top-14 left-4 bg-gray-50 p-2 rounded-full shadow`}>
-        <Icon.ArrowLeft strokeWidth={3} stroke={themeColors.bgColor(1)} />
-    </TouchableOpacity>
-    </View>
-
-     <Text style={{ fontSize: hp(4.4),color:COLORS.dark}}>Thank You using this App! </Text>
+  
+     <Text style={{ fontSize: hp(4.2),color:COLORS.dark}}>Thank You using this App! </Text>
       <Pressable
         style={[styles.button, styles.buttonOpen]}
         onPress={() => userSignOut()}>

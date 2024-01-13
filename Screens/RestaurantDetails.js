@@ -1,4 +1,4 @@
-import { View,Text,ScrollView,Image,TouchableOpacity,Button,StyleSheet,Modal,Pressable} from 'react-native';
+import { View,Text,ScrollView,Image,TouchableOpacity,Button,StyleSheet,Modal,Pressable, Alert} from 'react-native';
 import React, { useEffect,useState} from 'react';
 import { useNavigation, } from '@react-navigation/native';
 import DishRow from '../Const/DishesRow';
@@ -11,28 +11,21 @@ import { s as tw } from "react-native-wind";
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 import { COLORS } from '../Const/theme';
 import { emptyCart } from '../ReduxFolder/CartSlics';
-import DatePicker from 'react-native-date-picker'
-import DateTimePicker from '@react-native-community/datetimepicker';
-import CalendarPicker from 'react-native-calendar-picker';
+import DateTimePickerModal from "react-native-modal-datetime-picker";
 
 
 
 const ResturantDetails = ({route,id}) => {
 
     const [modalVisible, setModalVisible] = useState(false);
-    const [date, setDate] = useState(new Date(1598051730000));
-    const [mode, setMode] = useState('date');
-    const [show, setShow] = useState(false);
     const [open, setOpen] = useState(false)
     const [counter,setCounter] = useState(0)
-    const [seldate ,setDSelate] = useState('')
-
+    const [isDatePickerVisible, setDatePickerVisibility] = useState(false);
     
     const navigation = useNavigation();
     let dispatch = useDispatch();
     let item = route.params;
        
-    const [active, setActive] = useState(false);
    
     useEffect(() =>{
       if(item && item.id!=id){
@@ -41,23 +34,17 @@ const ResturantDetails = ({route,id}) => {
      dispatch(addresturant({...item})) 
     },[])
     
-    const onChange = (event, selectedDate) => {
-      const currentDate = selectedDate;
-      setShow(false);
-      setDate(currentDate);
+    const showDatePicker = () => {
+      setDatePickerVisibility(true);
     };
   
-    const showMode = (currentMode) => {
-      setShow(true);
-      setMode(currentMode);
+    const hideDatePicker = () => {
+      setDatePickerVisibility(false);
     };
   
-    const showDatepicker = () => {
-      showMode('date');
-    };
-  
-    const showTimepicker = () => {
-      showMode('time');
+    const handleConfirm = (date) => {
+     console.warn("A date has been picked:", date);
+     hideDatePicker();
     };
    
   return (
@@ -67,12 +54,13 @@ const ResturantDetails = ({route,id}) => {
             <View style={tw`relative`}>
                 <Image style={tw`w-full h-72`} source={item.image} />
                 <TouchableOpacity 
-                    onPress={()=>navigation.goBack()} 
+                    onPress={()=>navigation.navigate("Home")} 
                     style={tw`absolute top-14 left-4 bg-gray-50 p-2 rounded-full shadow`}>
                     <Icon.ArrowLeft strokeWidth={3} stroke={themeColors.bgColor(1)} />
                 </TouchableOpacity>
             </View>
-            <View 
+
+          <View 
                 style={{marginTop:8,paddingTop:6,borderTopLeftRadius:40,borderTopRightRadius:40,backgroundColor:COLORS.white}}> 
                  <View style={tw`px-5`}>
                     <Text style={tw`text-3xl font-bold`}>{item.name}</Text>
@@ -95,9 +83,22 @@ const ResturantDetails = ({route,id}) => {
                     </View>
                 </View>
             </View>
+       
+       {/* Click on it */}
+        <TouchableOpacity 
+            onPress={() => setModalVisible(true)} 
+            style={tw`flex-row justify-between bg-gray-100 mt-3`}>
+            <View>
+             <Text style={tw`px-4 text-3xl font-bold`}>Reserve</Text>
+             <Text style={tw`px-4 text-lg font-bold`}>your table now !                   
+             </Text>
+             </View>
+             <Image style={{height:70,width:'30%',borderRadius:9999,marginRight:20}} source={require('../assets/icons/bg2.png')}/>
+        
+                </TouchableOpacity>
+                
          {/* Modal */}
-         
-      <View style={styles.centeredView}>
+        <View style={styles.centeredView}>
          <Modal
              animationType="fade"
              transparent={true}
@@ -109,18 +110,24 @@ const ResturantDetails = ({route,id}) => {
            
              <View style={styles.centeredView}>
                <View style={styles.modalView}>
-              <Text style={styles.modalText}>Date & Time</Text>
-
-
-              <View style={styles.container}>
-              <CalendarPicker
-                onDateChange={this.onDateChange}
-              />
-        </View>
-
-
+              <Text style={tw`text-2xl mb-3`}>Book Your Table</Text>
               <View>
-            <Text style={tw`text-3xl ml-2`}>Guest</Text> 
+              <Pressable
+                 style={[styles.button, styles.buttonClose]}
+                 onPress={showDatePicker}>
+                 <Text style={styles.textStyle}>Select your Date</Text>
+               </Pressable>
+               
+              <DateTimePickerModal
+                isVisible={isDatePickerVisible}
+                mode="datetime"
+                onConfirm={handleConfirm}
+                onCancel={hideDatePicker}
+              />
+            </View>
+            
+          <View>
+            <Text style={tw`text-3xl ml-2 mt-4`}>Guest</Text> 
              <View style={tw`flex-row justify-center items-center mt-2 my-4`}>
               <TouchableOpacity onPress={() => setCounter(counter - 1)}>
               <Icon.Minus strokeWidth={4} stroke={themeColors.bgColor(1)} style={tw`mr-4`}/>
@@ -135,26 +142,14 @@ const ResturantDetails = ({route,id}) => {
                <Pressable
                  style={[styles.button, styles.buttonClose]}
                  onPress={() => setModalVisible(!modalVisible)}>
-                 <Text style={styles.textStyle}>Hide Modal</Text>
+                 <Text style={styles.textStyle}>Confirm</Text>
                </Pressable>
                 </View>
              </View>
            </Modal> 
         </View>
-
-        <TouchableOpacity 
-        onPress={() => setModalVisible(true)} 
-        style={tw`flex-row justify-between bg-gray-100 rounded-3xl shadow`}>
-        <View>
-         <Text style={tw`px-4 text-3xl font-bold`}>Reserve</Text>
-         <Text style={tw`px-4 pb-4 text-lg font-bold`}>your table now !                   
-         </Text>
-         </View>
-         <Image style={{height: 80, width: 80,borderRadius:9999,marginRight:20}} source={require('../assets/icons/bg2.png')}/>
-    
-            </TouchableOpacity>
-            
-            <View style={tw`pb-36 bg-white`}>
+           
+         <View style={tw`pb-36 bg-white`}>
                 <Text style={tw`px-4 py-4 text-2xl font-bold`}>Menu</Text>
                 {/* dishes */}
                 {
@@ -205,8 +200,8 @@ const styles = StyleSheet.create({
         padding: 10,
         alignItems: 'center',
         shadowColor: '#000',
-        height:"72%",
-        width:"85%",
+        height:"40%",
+        width:"90%",
         shadowOffset: {
           width: 0,
           height: 2,
@@ -225,6 +220,7 @@ const styles = StyleSheet.create({
         borderRadius: 20,
         padding: 10,
         elevation: 2,
+        width:"60%"
       },
       buttonOpen: {
         backgroundColor: '#F194FF',
@@ -236,15 +232,91 @@ const styles = StyleSheet.create({
         color: 'white',
         fontWeight: 'bold',
         textAlign: 'center',
+        fontSize: 18,
+
       },
       modalText: {
         marginBottom: 15,
         textAlign: 'center',
+        fontSize: 18,
+        
       },
 });
 
 
 export default ResturantDetails;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -4,42 +4,44 @@ import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-nativ
 import Animated,{FadeInDown} from 'react-native-reanimated';
 import { COLORS,SIZES,FONTS} from '../Const/theme';
 import { s as tw } from "react-native-wind";
+import { useNavigation } from '@react-navigation/native';
 
 
-const CategoiesList = ({categories,handleChangeCategory,activeCategory}) =>  {
+const CategoiesList = ({foodcategories,activeCategory}) => {
+
+const navigation = useNavigation()
   
-  return (
+return (
     <Animated.View entering={FadeInDown.duration(1000).springify()}>
     <ScrollView
     horizontal
     showsHorizontalScrollIndicator={false}
-    style={tw`space-x-4`}
-    >
-    {
-        categories.map((cat,index) => {
-          let isActive = cat.strCategory==activeCategory;
+    style={tw`space-x-4`}>
+      {
+        foodcategories.map((item,index) => {
+          let isActive = item.strCategory==activeCategory;
           let activeButtonClass = isActive ? COLORS.primary: COLORS.black; 
             return(
             <TouchableOpacity
                 key={index}
-                onPress={() => handleChangeCategory(cat.strCategory)}
+                onPress={() => navigation.replace("CategoriesDetails", {...item})}
                 style={tw`flex items-center p-2`}
                 >
                 <View style={tw`rounded-full p-[6px]`+activeButtonClass}>
                 <Image 
-                  source={{uri: cat.strCategoryThumb}}
+                  source={item.image}
                   style={{width: hp(9), height: hp(7),borderRadius:40}}
                   />
-
                 </View>
                 <Text style={{fontSize:hp(2.2),fontWeight:'700',marginTop:5}}>
-                {cat.strCategory}
-                </Text>                  
+                {item.name}
+                </Text>        
                 </TouchableOpacity>
           )
         })
-    }         
-      </ScrollView>
+    }
+
+  </ScrollView>
     </Animated.View>
   )
 }

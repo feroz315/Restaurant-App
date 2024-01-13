@@ -1,8 +1,5 @@
 
 export const restaurantrecipe = {
-    id: 1,
-    title: 'Hot and Spicy',
-    description: 'soft and tender fried chicken',
     restaurants: [
         {
             id: 1,
@@ -430,65 +427,668 @@ export const restaurantrecipe = {
     ]
 }
 
-// export const categories = [
-   
-//   {
-//       id: 1,
-//       name: 'mexican',
-//       description: 'mexican food',
-//       price: 150,
-//       image:  require('../assets/Restaurant/buffet.png')
-//   },
-//   {
-//    id: 2,
-//    name: 'mexican',
-//    description: 'mexican food',
-//    price: 150,
-//    image:  require('../assets/Restaurant/buffet.png')
-// },
-// {
-//    id: 3,
-//    name: 'mexican',
-//    description: 'mexican food',
-//    price: 150,
-//    image:  require('../assets/Restaurant/buffet.png')
-// },
-// {
-//    id: 4,
-//    name: 'mexican',
-//    description: 'mexican food',
-//    price: 150,
-//    image:  require('../assets/Restaurant/buffet.png')
-// },
-// {
-//    id: 5,
-//    name: 'mexican',
-//    description: 'mexican food',
-//    price: 150,
-//    image:  require('../assets/Restaurant/buffet.png')
-// },
-// {
-//    id: 6,
-//    name: 'mexican',
-//    description: 'mexican food',
-//    price: 150,
-//    image:  require('../assets/Restaurant/buffet.png')
-// },
-// {
-//    id: 7,
-//    name: 'mexican',
-//    description: 'mexican food',
-//    price: 150,
-//    image:  require('../assets/Restaurant/buffet.png')
-// },
-// {
-//    id: 8,
-//    name: 'mexican',
-//    description: 'mexican food',
-//    price: 150,
-//    image:  require('../assets/Restaurant/buffet.png')
-// },
-  
 
-// ]
- 
+export const RestaurantCategories = {
+     FoodCategories: [
+      {
+         id:1,
+         name:"Fast Food",
+         image: require('../assets/Restaurant/fastfood.jpg'),
+         restaurants:[
+       {
+            id: 1,
+            name: 'al-habib-restaurant',
+            image: require('../assets/Restaurant/al-habib-restaurant.jpg'),
+            description: 'Fast Foods',
+            lng: 24.9141707,
+            lat: 67.0822045,
+            address: 'Phase 8, D.H.A. Karachi',
+            stars: 4,
+            reviews: '4.4k',
+            category: 'Food ',
+            dishes: [
+               {
+                  id: 1,
+                  name: 'mexican',
+                  description: 'mexican food',
+                  price: 150,
+                  image:  require('../assets/food/155-1552768_mexican-food-png-mexican-food-images-png-transparent.png')
+               },
+               {
+                  id: 2,
+                  name: 'Fish',
+                  description: 'Taco Fish',
+                  price: 100,
+                  image:  require('../assets/food/169180-fresh-fish-taco-png-download-free.png')
+               },
+               {
+                  id: 3,
+                  name: 'shawarma',
+                  description: 'shawarma Roti',
+                  price: 200,
+                  image:  require('../assets/food/kcv6hj1598733479.jpg')
+               },
+           ],
+           
+      },
+      {
+         id: 2,
+         name: 'saltanat',
+         image: require('../assets/Restaurant/saltanat-restaurant.jpg'),
+         description: 'Fast Foods',
+         lng: 24.9141707,
+         lat: 67.0822045,
+         address: 'Phase 8, D.H.A. Karachi',
+         stars: 4,
+         reviews: '4.4k',
+         category: 'Food ',
+         dishes: [
+            {
+               id: 1,
+               name: 'shami kabab',
+               description: 'Hot shami kabab',
+               price: 500,
+               image:  require('../assets/food/qptpvt1487339892.jpg')
+            },
+            {
+               id: 2,
+               name: 'Cheey slice',
+               description: 'cheezy Slice',
+               price: 400,
+               image:  require('../assets/food/rvxxuy1468312893.jpg')
+            },
+            {
+               id: 3,
+               name: 'pizza',
+               description: 'cheezy garlic pizza',
+               price: 550,
+               image:  require('../assets/food/6560f6ebceba4.jpg')
+            },
+        ]
+   
+      },
+
+       ],
+
+      },
+      {
+         id:2,
+         name:"Buffet",
+         image: require('../assets/Restaurant/buffet.png'),
+
+         restaurants: [
+       {
+            id: 1,
+            name: 'al-habib-restaurant',
+            image: require('../assets/Restaurant/al-habib-restaurant.jpg'),
+            description: 'Fast Foods',
+            lng: 24.9141707,
+            lat: 67.0822045,
+            address: 'Phase 8, D.H.A. Karachi',
+            stars: 4,
+            reviews: '4.4k',
+            category: 'Food ',
+            dishes: [
+               {
+                  id: 1,
+                  name: 'shami kabab',
+                  description: 'Hot shami kabab',
+                  price: 500,
+                  image:  require('../assets/food/qptpvt1487339892.jpg')
+               },
+               {
+                  id: 2,
+                  name: 'Cheey slice',
+                  description: 'cheezy Slice',
+                  price: 400,
+                  image:  require('../assets/food/rvxxuy1468312893.jpg')
+               },
+               {
+                  id: 3,
+                  name: 'pizza',
+                  description: 'cheezy garlic pizza',
+                  price: 550,
+                  image:  require('../assets/food/6560f6ebceba4.jpg')
+               },
+           ]
+           
+      },
+      {
+         id: 2,
+         name: 'saltanat',
+         image: require('../assets/Restaurant/saltanat-restaurant.jpg'),
+         description: 'Fast Foods',
+         lng: 24.9141707,
+         lat: 67.0822045,
+         address: 'Phase 8, D.H.A. Karachi',
+         stars: 4,
+         reviews: '4.4k',
+         category: 'Food ',
+         dishes: [
+            {
+               id: 1,
+               name: 'shami kabab',
+               description: 'Hot shami kabab',
+               price: 500,
+               image:  require('../assets/food/qptpvt1487339892.jpg')
+            },
+            {
+               id: 2,
+               name: 'Cheey slice',
+               description: 'cheezy Slice',
+               price: 400,
+               image:  require('../assets/food/rvxxuy1468312893.jpg')
+            },
+            {
+               id: 3,
+               name: 'pizza',
+               description: 'cheezy garlic pizza',
+               price: 550,
+               image:  require('../assets/food/6560f6ebceba4.jpg')
+            },
+        ]
+   
+      },
+
+         ],
+
+      },
+      {
+         id:3,
+         name:"Destination",
+         image: require('../assets/Restaurant/Destination.png'),
+
+         restaurants: [
+       {
+            id: 1,
+            name: 'al-habib-restaurant',
+            image: require('../assets/Restaurant/al-habib-restaurant.jpg'),
+            description: 'Fast Foods',
+            lng: 24.9141707,
+            lat: 67.0822045,
+            address: 'Phase 8, D.H.A. Karachi',
+            stars: 4,
+            reviews: '4.4k',
+            category: 'Food ',
+            dishes: [
+               {
+                  id: 1,
+                  name: 'shami kabab',
+                  description: 'Hot shami kabab',
+                  price: 500,
+                  image:  require('../assets/food/qptpvt1487339892.jpg')
+               },
+               {
+                  id: 2,
+                  name: 'Cheey slice',
+                  description: 'cheezy Slice',
+                  price: 400,
+                  image:  require('../assets/food/rvxxuy1468312893.jpg')
+               },
+               {
+                  id: 3,
+                  name: 'pizza',
+                  description: 'cheezy garlic pizza',
+                  price: 550,
+                  image:  require('../assets/food/6560f6ebceba4.jpg')
+               },
+           ]
+           
+      },
+      {
+         id: 2,
+         name: 'saltanat',
+         image: require('../assets/Restaurant/saltanat-restaurant.jpg'),
+         description: 'Fast Foods',
+         lng: 24.9141707,
+         lat: 67.0822045,
+         address: 'Phase 8, D.H.A. Karachi',
+         stars: 4,
+         reviews: '4.4k',
+         category: 'Food ',
+         dishes: [
+            {
+               id: 1,
+               name: 'shami kabab',
+               description: 'Hot shami kabab',
+               price: 500,
+               image:  require('../assets/food/qptpvt1487339892.jpg')
+            },
+            {
+               id: 2,
+               name: 'Cheey slice',
+               description: 'cheezy Slice',
+               price: 400,
+               image:  require('../assets/food/rvxxuy1468312893.jpg')
+            },
+            {
+               id: 3,
+               name: 'pizza',
+               description: 'cheezy garlic pizza',
+               price: 550,
+               image:  require('../assets/food/6560f6ebceba4.jpg')
+            },
+        ]
+   
+      },
+
+         ],
+
+      },
+      {
+         id:4,
+         name:"Fast Casual",
+         image: require('../assets/Restaurant/fast.png'),
+
+         restaurants: [
+       {
+            id: 1,
+            name: 'al-habib-restaurant',
+            image: require('../assets/Restaurant/al-habib-restaurant.jpg'),
+            description: 'Fast Foods',
+            lng: 24.9141707,
+            lat: 67.0822045,
+            address: 'Phase 8, D.H.A. Karachi',
+            stars: 4,
+            reviews: '4.4k',
+            category: 'Food ',
+            dishes: [
+               {
+                  id: 1,
+                  name: 'shami kabab',
+                  description: 'Hot shami kabab',
+                  price: 500,
+                  image:  require('../assets/food/qptpvt1487339892.jpg')
+               },
+               {
+                  id: 2,
+                  name: 'Cheey slice',
+                  description: 'cheezy Slice',
+                  price: 400,
+                  image:  require('../assets/food/rvxxuy1468312893.jpg')
+               },
+               {
+                  id: 3,
+                  name: 'pizza',
+                  description: 'cheezy garlic pizza',
+                  price: 550,
+                  image:  require('../assets/food/6560f6ebceba4.jpg')
+               },
+           ]
+           
+      },
+      {
+         id: 2,
+         name: 'saltanat',
+         image: require('../assets/Restaurant/saltanat-restaurant.jpg'),
+         description: 'Fast Foods',
+         lng: 24.9141707,
+         lat: 67.0822045,
+         address: 'Phase 8, D.H.A. Karachi',
+         stars: 4,
+         reviews: '4.4k',
+         category: 'Food ',
+         dishes: [
+            {
+               id: 1,
+               name: 'shami kabab',
+               description: 'Hot shami kabab',
+               price: 500,
+               image:  require('../assets/food/qptpvt1487339892.jpg')
+            },
+            {
+               id: 2,
+               name: 'Cheey slice',
+               description: 'cheezy Slice',
+               price: 400,
+               image:  require('../assets/food/rvxxuy1468312893.jpg')
+            },
+            {
+               id: 3,
+               name: 'pizza',
+               description: 'cheezy garlic pizza',
+               price: 550,
+               image:  require('../assets/food/6560f6ebceba4.jpg')
+            },
+        ]
+   
+      },
+
+         ],
+
+      },
+      {
+         id:5,
+         name:"B-B-Q ",
+         image: require('../assets/Restaurant/bbq-tonight-restaurant.jpg'),
+
+         restaurants: [
+       {
+            id: 1,
+            name: 'al-habib-restaurant',
+            image: require('../assets/Restaurant/al-habib-restaurant.jpg'),
+            description: 'Fast Foods',
+            lng: 24.9141707,
+            lat: 67.0822045,
+            address: 'Phase 8, D.H.A. Karachi',
+            stars: 4,
+            reviews: '4.4k',
+            category: 'Food ',
+            dishes: [
+               {
+                  id: 1,
+                  name: 'shami kabab',
+                  description: 'Hot shami kabab',
+                  price: 500,
+                  image:  require('../assets/food/qptpvt1487339892.jpg')
+               },
+               {
+                  id: 2,
+                  name: 'Cheey slice',
+                  description: 'cheezy Slice',
+                  price: 400,
+                  image:  require('../assets/food/rvxxuy1468312893.jpg')
+               },
+               {
+                  id: 3,
+                  name: 'pizza',
+                  description: 'cheezy garlic pizza',
+                  price: 550,
+                  image:  require('../assets/food/6560f6ebceba4.jpg')
+               },
+           ]
+           
+      },
+      {
+         id: 2,
+         name: 'saltanat',
+         image: require('../assets/Restaurant/saltanat-restaurant.jpg'),
+         description: 'Fast Foods',
+         lng: 24.9141707,
+         lat: 67.0822045,
+         address: 'Phase 8, D.H.A. Karachi',
+         stars: 4,
+         reviews: '4.4k',
+         category: 'Food ',
+         dishes: [
+            {
+               id: 1,
+               name: 'shami kabab',
+               description: 'Hot shami kabab',
+               price: 500,
+               image:  require('../assets/food/qptpvt1487339892.jpg')
+            },
+            {
+               id: 2,
+               name: 'Cheey slice',
+               description: 'cheezy Slice',
+               price: 400,
+               image:  require('../assets/food/rvxxuy1468312893.jpg')
+            },
+            {
+               id: 3,
+               name: 'pizza',
+               description: 'cheezy garlic pizza',
+               price: 550,
+               image:  require('../assets/food/6560f6ebceba4.jpg')
+            },
+        ]
+   
+      },
+
+         ],
+
+      },
+      {
+         id:6,
+         name:"Virtual",
+         image: require('../assets/Restaurant/Virtual.jpg'),
+
+         restaurants: [
+       {
+            id: 1,
+            name: 'al-habib-restaurant',
+            image: require('../assets/Restaurant/al-habib-restaurant.jpg'),
+            description: 'Fast Foods',
+            lng: 24.9141707,
+            lat: 67.0822045,
+            address: 'Phase 8, D.H.A. Karachi',
+            stars: 4,
+            reviews: '4.4k',
+            category: 'Food ',
+            dishes: [
+               {
+                  id: 1,
+                  name: 'shami kabab',
+                  description: 'Hot shami kabab',
+                  price: 500,
+                  image:  require('../assets/food/qptpvt1487339892.jpg')
+               },
+               {
+                  id: 2,
+                  name: 'Cheey slice',
+                  description: 'cheezy Slice',
+                  price: 400,
+                  image:  require('../assets/food/rvxxuy1468312893.jpg')
+               },
+               {
+                  id: 3,
+                  name: 'pizza',
+                  description: 'cheezy garlic pizza',
+                  price: 550,
+                  image:  require('../assets/food/6560f6ebceba4.jpg')
+               },
+           ]
+           
+      },
+      {
+         id: 2,
+         name: 'saltanat',
+         image: require('../assets/Restaurant/saltanat-restaurant.jpg'),
+         description: 'Fast Foods',
+         lng: 24.9141707,
+         lat: 67.0822045,
+         address: 'Phase 8, D.H.A. Karachi',
+         stars: 4,
+         reviews: '4.4k',
+         category: 'Food ',
+         dishes: [
+            {
+               id: 1,
+               name: 'shami kabab',
+               description: 'Hot shami kabab',
+               price: 500,
+               image:  require('../assets/food/qptpvt1487339892.jpg')
+            },
+            {
+               id: 2,
+               name: 'Cheey slice',
+               description: 'cheezy Slice',
+               price: 400,
+               image:  require('../assets/food/rvxxuy1468312893.jpg')
+            },
+            {
+               id: 3,
+               name: 'pizza',
+               description: 'cheezy garlic pizza',
+               price: 550,
+               image:  require('../assets/food/6560f6ebceba4.jpg')
+            },
+        ]
+   
+      },
+
+         ],
+
+      },
+      {
+         id:7,
+         name:"Contemporary",
+         image: require('../assets/Restaurant/contemporary-casual.jpg'),
+
+         restaurants: [
+       {
+            id: 1,
+            name: 'al-habib-restaurant',
+            image: require('../assets/Restaurant/al-habib-restaurant.jpg'),
+            description: 'Fast Foods',
+            lng: 24.9141707,
+            lat: 67.0822045,
+            address: 'Phase 8, D.H.A. Karachi',
+            stars: 4,
+            reviews: '4.4k',
+            category: 'Food ',
+            dishes: [
+               {
+                  id: 1,
+                  name: 'shami kabab',
+                  description: 'Hot shami kabab',
+                  price: 500,
+                  image:  require('../assets/food/qptpvt1487339892.jpg')
+               },
+               {
+                  id: 2,
+                  name: 'Cheey slice',
+                  description: 'cheezy Slice',
+                  price: 400,
+                  image:  require('../assets/food/rvxxuy1468312893.jpg')
+               },
+               {
+                  id: 3,
+                  name: 'pizza',
+                  description: 'cheezy garlic pizza',
+                  price: 550,
+                  image:  require('../assets/food/6560f6ebceba4.jpg')
+               },
+           ]
+           
+      },
+      {
+         id: 2,
+         name: 'saltanat',
+         image: require('../assets/Restaurant/saltanat-restaurant.jpg'),
+         description: 'Fast Foods',
+         lng: 24.9141707,
+         lat: 67.0822045,
+         address: 'Phase 8, D.H.A. Karachi',
+         stars: 4,
+         reviews: '4.4k',
+         category: 'Food ',
+         dishes: [
+            {
+               id: 1,
+               name: 'shami kabab',
+               description: 'Hot shami kabab',
+               price: 500,
+               image:  require('../assets/food/qptpvt1487339892.jpg')
+            },
+            {
+               id: 2,
+               name: 'Cheey slice',
+               description: 'cheezy Slice',
+               price: 400,
+               image:  require('../assets/food/rvxxuy1468312893.jpg')
+            },
+            {
+               id: 3,
+               name: 'pizza',
+               description: 'cheezy garlic pizza',
+               price: 550,
+               image:  require('../assets/food/6560f6ebceba4.jpg')
+            },
+        ]
+   
+      },
+
+         ],
+
+      },
+      {
+         id:8,
+         name:"Fast Food",
+         image: require('../assets/Restaurant/fastfood.jpg'),
+
+         restaurants: [
+       {
+            id: 1,
+            name: 'al-habib-restaurant',
+            image: require('../assets/Restaurant/al-habib-restaurant.jpg'),
+            description: 'Fast Foods',
+            lng: 24.9141707,
+            lat: 67.0822045,
+            address: 'Phase 8, D.H.A. Karachi',
+            stars: 4,
+            reviews: '4.4k',
+            category: 'Food ',
+            dishes: [
+               {
+                  id: 1,
+                  name: 'shami kabab',
+                  description: 'Hot shami kabab',
+                  price: 500,
+                  image:  require('../assets/food/qptpvt1487339892.jpg')
+               },
+               {
+                  id: 2,
+                  name: 'Cheey slice',
+                  description: 'cheezy Slice',
+                  price: 400,
+                  image:  require('../assets/food/rvxxuy1468312893.jpg')
+               },
+               {
+                  id: 3,
+                  name: 'pizza',
+                  description: 'cheezy garlic pizza',
+                  price: 550,
+                  image:  require('../assets/food/6560f6ebceba4.jpg')
+               },
+           ]
+           
+      },
+      {
+         id: 2,
+         name: 'saltanat',
+         image: require('../assets/Restaurant/saltanat-restaurant.jpg'),
+         description: 'Fast Foods',
+         lng: 24.9141707,
+         lat: 67.0822045,
+         address: 'Phase 8, D.H.A. Karachi',
+         stars: 4,
+         reviews: '4.4k',
+         category: 'Food ',
+         dishes: [
+            {
+               id: 1,
+               name: 'shami kabab',
+               description: 'Hot shami kabab',
+               price: 500,
+               image:  require('../assets/food/qptpvt1487339892.jpg')
+            },
+            {
+               id: 2,
+               name: 'Cheey slice',
+               description: 'cheezy Slice',
+               price: 400,
+               image:  require('../assets/food/rvxxuy1468312893.jpg')
+            },
+            {
+               id: 3,
+               name: 'pizza',
+               description: 'cheezy garlic pizza',
+               price: 550,
+               image:  require('../assets/food/6560f6ebceba4.jpg')
+            },
+        ]
+   
+      },
+
+         ],
+
+      },
+      
+      
+      
+
+
+   ]
+}

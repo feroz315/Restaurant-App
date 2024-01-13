@@ -13,7 +13,7 @@ import Animated, { FadeInDown } from 'react-native-reanimated';
 
 
 
-const RestaurantCard = ({item,index}) => {
+const CategoriesCard = ({item,index}) => {
 
 const navigation = useNavigation();
 let isEven = index%2==0;
@@ -56,4 +56,4 @@ let isEven = index%2==0;
 
 
 
-export default RestaurantCard;
+export default CategoriesCard;

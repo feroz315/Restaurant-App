@@ -68,7 +68,10 @@ style={tw`p-2 flex-row justify-between items-center rounded-full my-3 mx-2 bg-or
   <Text style={tw`text-white font-semibold`}>Your Rider</Text>
 </View>
 <View style={tw`flex-row justify-between items-center mr-3`}>
-<TouchableOpacity style={tw`bg-white p-2 rounded-full mr-1`}>
+<TouchableOpacity 
+style={tw`bg-white p-2 rounded-full mr-1`}
+onPress={() => navigation.replace("SignOut")}
+>
   <Icon.Phone fill={themeColors.bgColor(1)} stroke={themeColors.bgColor(1)} strokeWidth="2" />
 </TouchableOpacity>
 
@@ -76,8 +79,7 @@ style={tw`p-2 flex-row justify-between items-center rounded-full my-3 mx-2 bg-or
   <Icon.X stroke={'red'} strokeWidth="5" />
 </TouchableOpacity>
 
-
-</View>
+ </View>
 </View>
 </View>
     </View>
