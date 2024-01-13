@@ -7,6 +7,7 @@ import { s as tw } from "react-native-wind";
 
 
 const CategoiesList = ({categories,handleChangeCategory,activeCategory}) =>  {
+  
   return (
     <Animated.View entering={FadeInDown.duration(1000).springify()}>
     <ScrollView

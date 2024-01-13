@@ -26,7 +26,7 @@ export default function BasketIcon() {
             </View>
             
             <Text style={tw`flex-1 text-center font-extrabold text-white text-lg`}>View Cart</Text>
-            <Text style={tw`font-extrabold text-white text-lg`}>${carttotal}</Text>
+            <Text style={tw`font-extrabold text-white text-lg`}>Rs.{carttotal}</Text>
         
         </TouchableOpacity>
       }

@@ -5,6 +5,7 @@ import { logo } from '../Const/images';
 import { CustomButton } from '../Const/Button';
 import { FirebaseAuth } from '../Config/firebase';
 import { signInWithEmailAndPassword } from 'firebase/auth';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 
 
@@ -12,6 +13,7 @@ const LoginSubmit = ({navigation }) => {
 
 const [Email, setEmail] = useState('');
 const [Password, setPassword] = useState("");
+const [hidePass, setHidePass ] = useState(true)
 const auth = FirebaseAuth;
 
 
@@ -29,18 +31,16 @@ const Submit = async () => {
     setPassword('')
    };
   
-
 return (
 
-      <View style={Globalstyles.container_2}>
+<View style={Globalstyles.container_2}>
 
-      {/*logo */}
-      <Image
+  {/*logo */}
+     <Image
           source={logo}
           resizeMode='contain'
           style={Globalstyles.logo} />
-    
-
+  
       <ScrollView>
 
         {/* signin form */}
@@ -52,16 +52,21 @@ return (
   style={Globalstyles.input}
   placeholder='Enter your Email'
   onChangeText={(text) => setEmail(text)}/>
+  
 
 {/* password field*/}
+<View style={{flexDirection:'row',justifyContent:'center',alignItems:'center'}}>
   <TextInput
       value={Password}
       autoCapitalize='none'
-      secureTextEntry={true}
+      secureTextEntry={hidePass ? true : false}
       style={Globalstyles.input}
       placeholder='Enter your Password'
       onChangeText={(text) => setPassword(text)}/>
-    
+      <TouchableOpacity onPress={() => setHidePass(!hidePass)}>
+       <Icon name={hidePass ? 'eye-slash' : 'eye'} size={16} color="#007BFF" style={{marginRight:10}}/>
+         </TouchableOpacity>
+     </View>
     </View>
 
 {/* signin button */}
@@ -82,6 +87,8 @@ return (
 
  );
 }
+
+
 
 
 export default LoginSubmit;

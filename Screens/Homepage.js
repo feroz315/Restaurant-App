@@ -7,12 +7,9 @@ import axios from 'axios';
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 import { BellIcon } from 'react-native-heroicons/outline'
 import { s as tw } from "react-native-wind";
-import { useNavigation } from '@react-navigation/native';
 import Search from './Search';
 import { restaurantrecipe } from '../Const/ApiData';
 import RestaurantRow from '../Const/RestaurantRow';
-import { FirebaseAuth } from '../Config/firebase';
-import { signOut } from 'firebase/auth';
 
 
 
@@ -22,8 +19,7 @@ const HomeScreen = () => {
 const [categories,setCatgories ] = useState([]);
 const [activeCategory, setActiveCategory] = useState('Beef');
 const [meals, setMeals] = useState([]);
-const auth = FirebaseAuth;
-const navigation = useNavigation();
+
 
 
 useEffect(() => {
@@ -32,17 +28,6 @@ getRecipes()
 
 },[])
 
-const userSignOut = async () => {
-  try {
-    const res = await signOut(auth);
-    console.log(res);
-    navigation.navigate('Login')
-  } catch (error) {
-    console.log(error);
-
-  }
-  
-}
 
 const getCategories = async () => {
   try {
@@ -81,20 +66,22 @@ return (
    <View style={tw`flex-1 bg-white`}>
    <StatusBar style="dark" />
 
+   <View style={tw`mx-4 flex-row justify-between items-center mt-12`}>
+   <TouchableOpacity>
+     <Image source={require('../assets/images/avatar.png')} style={{height: hp(5), width: hp(5.5)}} />
+     </TouchableOpacity>
+       {/* search bar */}
+       <Search meals={meals}/>
+   <BellIcon size={hp(4)} color="gray" />       
+  </View>
+
+
     {/* main */}
    <ScrollView
    showsVerticalScrollIndicator={false}
    contentContainerStyle={{paddingBottom: 50}}
-   style={tw`space-y-6 pt-14`}>
+   style={tw`space-y-6 `}>
  
-   <View style={tw`mx-4 flex-row justify-between items-center mb-2`}>
-          <TouchableOpacity onPress={() => userSignOut()}>
-            <Image source={require('../assets/images/avatar.png')} style={{height: hp(5), width: hp(5.5)}} />
-            </TouchableOpacity>
-              {/* search bar */}
-              <Search />
-          <BellIcon size={hp(4)} color="gray" />       
-     </View>
               
 {/* Categories Data  */ }     
     <View style={style.view_container}>

@@ -15,6 +15,8 @@ import OrderScreen from './OrderScreen';
 import DeliveryScreen from './DeliveryScreen';
 import BasketScreen from './CartScreen';
 import CreditCardForm from './CreditCard';
+import SignOut from './SignOut';
+import DishRow from '../Const/DishesRow';
 
 
 
@@ -38,8 +40,11 @@ return (
          <Stack.Screen name="Payment" component={CreditCardForm} />   
          <Stack.Screen name="DeliveryScreen" component={DeliveryScreen} />   
          <Stack.Screen name="OrderScreen" component={OrderScreen} />  
-         <Stack.Screen name="BasketScreen" component={BasketScreen} />  
-
+         <Stack.Screen name="BasketScreen" component={BasketScreen} />
+         <Stack.Screen name="SignOut" component={SignOut} />
+         <Stack.Screen name="DishRow" component={DishRow} />
+         
+   
          </Stack.Navigator>
     </NavigationContainer>
   );

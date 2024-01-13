@@ -12,16 +12,17 @@ const {width} = Dimensions.get('screen');
 const cardWidth = width / 2 - 20;
 
 
-const Search = ({ navigation }) => {
+const Search = ({meals}) => {
 const [ filter,setFilterData ] = useState([]);
 const [ search,setSearch ] = useState('');
 
-// const SearchItem = useSelector(state => state.product);
+const SearchItem = useSelector(state => state.product);
 
 
 const SearchFilter = (text) => {
 if(text){
-  const newData = [restaurantrecipe].filter((item) => {  
+  const newData = meals.filter((item) => {
+    console.log("data",newData)  
    const itemData = item.name ? item.name.toUpperCase() : ''.toUpperCase(); 
     const textData = text.toUpperCase();
     return itemData.indexOf(textData) > -1;

@@ -24,8 +24,6 @@
 
     
 import { configureStore } from '@reduxjs/toolkit'
-// import basketSlice from './BasketSlice';
-// import resturantSlice from './RestaurantSlice';
 import MyCartSlice from  '../ReduxFolder/CartSlics';
 import  MyProductSlice from '../ReduxFolder/HomeSlics';
 import  ResturantSlice from './RestaurantSlice';
@@ -57,20 +55,3 @@ export const store = configureStore({
 
 
 
-
-
-
-
-// import { configureStore } from "@reduxjs/toolkit";
-// import MyProductReducer from "./HomeSlics";
-// import MyCartReducer from "./CartSlics";
-// import MyUserSlice from "./UserSlics";
-
-
-// export const mystore = configureStore({
-//     reducer: {
-//         product: MyProductReducer,
-//         cart:  MyCartReducer,
-//         user: MyUserSlice
-//     },
-// });

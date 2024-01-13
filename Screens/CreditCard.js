@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { StyleSheet, View,TextInput,Text,Image,TouchableOpacity, Alert } from 'react-native';
+import { StyleSheet, View,TextInput,Text,Image,TouchableOpacity } from 'react-native';
 import { CustomButton } from '../Const/Button';
 import { useNavigation } from '@react-navigation/native';
 import { COLORS } from '../Const/theme';
-import { Globalstyles } from '../Styles/GobalStyle';
 import { SIZES, FONTS } from '../Const/theme';
 import { s as tw } from "react-native-wind";
 import { themeColors } from '../Styles/theme';
@@ -28,14 +27,17 @@ const CreditCardForm = () => {
   },[])
   
   return (
-    <View style={{ flex:1, backgroundColor:COLORS.white, justifyContent:'center',alignItems:'center'}}>
+
+    
+<View style={{ flex:1, backgroundColor:COLORS.white, justifyContent:'center',alignItems:'center'}}>
     
   <TouchableOpacity 
     onPress={()=>navigation.goBack()} 
-    style={tw`absolute top-14 left-4 bg-gray-50 p-2 rounded-full shadow`}>
+    style={tw`absolute top-12 left-4 bg-gray-50 p-2 rounded-full shadow`}>
     <Icon.ArrowLeft strokeWidth={3} stroke={themeColors.bgColor(1)} />
    </TouchableOpacity>
-    <Text style={tw`flex text-3xl mb-4 text-center w-full rounded-full`}>Payment Details</Text>
+   <View style={{flex:1,alignSelf:'center',width:"100%",marginLeft:10,marginVertical:100}}>
+    <Text style={tw`text-3xl mb-4 text-center w-full rounded-full`}>Payment Details</Text>
      <TextInput
         style={styles.input}
         placeholder="Cardholder Name"
@@ -68,7 +70,7 @@ const CreditCardForm = () => {
         />
         </View>
  
-      <View style={{flexDirection:'row',marginLeft:200,marginTop:10}}>
+      <View style={{flexDirection:'row',marginLeft:200,marginTop:5}}>
         <Image 
          source={require("../assets/icons/visa.png")} 
          style={{width:40,height:30}}  
@@ -81,12 +83,13 @@ const CreditCardForm = () => {
          source={require("../assets/icons/67221_paypal_icon.png")} 
          style={{width:40,height:30,marginLeft:5}}  
          />
-       
-         </View>
+       </View>
+      
+
             {name == '' || cardNumber == '' || expiration == '' || cvv == '' ? null
             :
-            <CustomButton text="Pay Now" onPressButton={() => navigation.navigate("OrderScreen")} />}
-        
+            <CustomButton text="Pay Now" onPressButton={() => navigation.navigate("OrderScreen")}/>}
+      </View>  
     </View>
   );
 };
@@ -98,11 +101,6 @@ const styles = StyleSheet.create({
   row: {
       flexDirection: 'row',
    },
-  textField: {
-    backgroundColor:COLORS.black,
-    marginTop: 50,
-
-  },
   input: {
     width:"90%",
     height:60,
@@ -113,7 +111,7 @@ const styles = StyleSheet.create({
     borderWidth: 0.75,
     ...FONTS.body3,
     padding: 10,
-    marginVertical: 15,
+    marginVertical: 8,
        
   },
   input2: {
@@ -126,7 +124,7 @@ const styles = StyleSheet.create({
     borderWidth: 0.85,
     ...FONTS.body3,
     padding: 10,
-    marginVertical: 15,
+    marginVertical: 8,
     
   },
 });

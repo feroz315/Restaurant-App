@@ -15,46 +15,79 @@ export const restaurantrecipe = {
             stars: 4,
             reviews: '4.4k',
             category: 'Food ',
-    Tables: [
+            dishes: [
                {
-                  person: "person- 10",
-                  image: require('../assets/images/avatar1.jpg'),
-                  reserve:"Booked"
+                  id: 1,
+                  name: 'mexican',
+                  description: 'mexican food',
+                  price: 150,
+                  image:  require('../assets/food/155-1552768_mexican-food-png-mexican-food-images-png-transparent.png')
                },
                {
-                  person: 3,
-                  image: require('../assets/images/avatar1.jpg'),
+                  id: 2,
+                  name: 'Fish',
+                  description: 'Taco Fish',
+                  price: 100,
+                  image:  require('../assets/food/169180-fresh-fish-taco-png-download-free.png')
                },
                {
-                  person: 2,
-                  image: require('../assets/images/avatar1.jpg'),
+                  id: 3,
+                  name: 'shawarma',
+                  description: 'shawarma Roti',
+                  price: 200,
+                  image:  require('../assets/food/kcv6hj1598733479.jpg')
                },
+           ],
+   
+      Tables: [
+               {
+                  image: require('../assets/icons/NicePng_kitchen-table-png_9008414.png'),
+                  person: "Number of people",
+                  capacity: 12,              
+                  isAvailable:"Avaliable",
+               },
+               {
+                  person: "Number of people",
+                  capacity: 10,              
+                  isAvailable:"Avaliable",
+                  image: require('../assets/icons/kindpng_43048.png'),
+               },
+            
+               {
+                  person: "Number of people",
+                  capacity: 8,              
+                  isAvailable:"Avaliable",
+                  image: require('../assets/icons/bg1.png'),
+               },
+               {
+                  person: "Number of people",
+                  capacity: 6,              
+                  isAvailable:"Avaliable",
+                  image: require('../assets/icons/bg2.png'),
+               },
+               {
+                  person: "Number of people",
+                  capacity: 4,              
+                  isAvailable:"Avaliable",
+                  image: require('../assets/icons/bg3.png'),
+               },
+               {
+                  person: "Number of people",
+                  capacity: 3,              
+                  isAvailable:"Avaliable",
+                  image: require('../assets/icons/bg4.png'),
+               },
+               {
+                  person: "Number of people",
+                  capacity: 2,              
+                  isAvailable:"Avaliable",
+                  image: require('../assets/icons/bg4.png'),
+               },
+            
+            
           
             ],
-    dishes: [
-                {
-                   id: 1,
-                   name: 'mexican',
-                   description: 'mexican food',
-                   price: 150,
-                   image:  require('../assets/food/155-1552768_mexican-food-png-mexican-food-images-png-transparent.png')
-                },
-                {
-                   id: 2,
-                   name: 'Fish',
-                   description: 'Taco Fish',
-                   price: 100,
-                   image:  require('../assets/food/169180-fresh-fish-taco-png-download-free.png')
-                },
-                {
-                   id: 3,
-                   name: 'shawarma',
-                   description: 'shawarma Roti',
-                   price: 200,
-                   image:  require('../assets/food/kcv6hj1598733479.jpg')
-                },
-            ]
-    
+     
         },
         {
             id: 2,
@@ -63,24 +96,55 @@ export const restaurantrecipe = {
             description: 'Hot and spicy',
             lng: -85.5324269,
             lat: 38.2145602,
-            address: '434 second street',
-            stars: 4,
+            address: 'National Stadium Karsaz Rd',
+            stars: 4.6,
             reviews: '4.4k',
             category: 'Hot and Spicy',
             Tables: [
                {
-                  person: "person- 10",
-                  image: require('../assets/images/avatar1.jpg'),
-                  reserve:"Booked"
+                  person: "Number of people",
+                  capacity: 12,              
+                  isAvailable:"Avaliable",
+                  image: require('../assets/icons/NicePng_kitchen-table-png_9008414.png'),
                },
                {
-                  person: 3,
-                  image: require('../assets/images/avatar1.jpg'),
+                  person: "Number of people",
+                  capacity: 10,              
+                  isAvailable:"Avaliable",
+                  image: require('../assets/icons/kindpng_43048.png'),
+               },
+            
+               {
+                  person: "Number of people",
+                  capacity: 8,              
+                  isAvailable:"Avaliable",
+                  image: require('../assets/icons/kindpng_43203.png'),
                },
                {
-                  person: 2,
-                  image: require('../assets/images/avatar1.jpg'),
+                  person: "Number of people",
+                  capacity: 6,              
+                  isAvailable:"Avaliable",
+                  image: require('../assets/icons/bg1.png'),
                },
+               {
+                  person: "Number of people",
+                  capacity: 4,              
+                  isAvailable:"Avaliable",
+                  image: require('../assets/icons/bg2.png'),
+               },
+               {
+                  person: "Number of people",
+                  capacity: 3,              
+                  isAvailable:"Avaliable",
+                  image: require('../assets/icons/bg3.png'),
+               },
+               {
+                  person: "Number of people",
+                  capacity: 2,              
+                  isAvailable:"Avaliable",
+                  image: require('../assets/icons/bg4.png'),
+               },
+            
           
             ],
             dishes: [
@@ -115,34 +179,58 @@ export const restaurantrecipe = {
             description: 'Hot and spicy',
             lng: -85.5324269,
             lat: 38.2145602,
-            address: '434 second street',
-            stars: 4,
-            reviews: '4.4k',
+            address: 'Beach View Phase 8 D.H.A',
+            stars: 4.2,
+            reviews: '4.2k',
             category: 'Healthy Food',
             Tables: [
                {
-                  person: "10 \n person",
-                  image: require('../assets/icons/kindpng_43048.png'),
-               },
-               {
-                  person: 3,
+                  person: "Number of people",
+                  capacity: 12,
                   image: require('../assets/icons/NicePng_kitchen-table-png_9008414.png'),
+                  isAvailable:"Avaliable"
+
                },
                {
-                  person: 2,
-                  image: require('../assets/icons/images.jpg'),
+                  person: "Number of people",
+                  capacity: 10,              
+                  image: require('../assets/icons/kindpng_43048.png'),
+                  isAvailable:"Avaliable"
+
+               },
+            
+               {
+                  person: "Number of people",
+                  capacity: 8,              
+                  isAvailable:"Avaliable",
+                  image: require('../assets/icons/kindpng_43203.png'),
+
                },
                {
-                  person: 3,
-                  image: require('../assets/icons/download.jpg'),
+                  person: "Number of people",
+                  capacity: 6,              
+                  isAvailable:"Avaliable",
+                  image: require('../assets/icons/bg1.png'),
+                 
                },
                {
-                  person: 3,
-                  image: require('../assets/icons/download2.jpg'),
+                  person: "Number of people",
+                  capacity: 4,              
+                  isAvailable:"Avaliable",
+                  image: require('../assets/icons/bg2.png'),
                },
                {
-                  person: 3,
-                  image: require('../assets/icons/download3.jpg'),
+                  
+                  person: "Number of people",
+                  capacity: 3,              
+                  isAvailable:"Avaliable",
+                  image: require('../assets/icons/bg3.png'),
+               },
+               {
+                  person: "Number of people",
+                  capacity: 2,              
+                  isAvailable:"Avaliable",
+                  image: require('../assets/icons/bg4.png'),
                },
             
           
@@ -179,24 +267,56 @@ export const restaurantrecipe = {
          description: 'Hot and spicy',
          lng: -85.5324269,
          lat: 38.2145602,
-         address: '434 second street',
-         stars: 4,
-         reviews: '4.4k',
+         address: 'Gulshan-e-Maymar morr, Karachi.',
+         stars: 4.3,
+         reviews: '4.7k',
          category: 'Healthy Food',
          Tables: [
             {
-               person: "person- 10",
-               image: require('../assets/images/avatar1.jpg'),
-               reserve:"Booked"
+               person: "Number of people",
+               capacity: 12,              
+               isAvailable:"Avaliable",         
+               image: require('../assets/icons/NicePng_kitchen-table-png_9008414.png'),
             },
             {
-               person: 3,
-               image: require('../assets/images/avatar1.jpg'),
+            
+               person: "Number of people",
+               capacity: 10,              
+               isAvailable:"Avaliable",
+               image: require('../assets/icons/kindpng_43048.png'),
+            },
+         
+            {
+               person: "Number of people",
+               capacity: 8,              
+               isAvailable:"Avaliable",
+               image: require('../assets/icons/kindpng_43203.png'),
             },
             {
-               person: 2,
-               image: require('../assets/images/avatar1.jpg'),
+               person: "Number of people",
+               capacity: 6,              
+               isAvailable:"Avaliable",
+               image: require('../assets/icons/bg1.png'),
             },
+            {
+               person: "Number of people",
+               capacity: 4,              
+               isAvailable:"Avaliable",
+               image: require('../assets/icons/bg2.png'),
+            },
+            {
+               person: "Number of people",
+               capacity: 3,              
+               isAvailable:"Avaliable",
+               image: require('../assets/icons/bg3.png'),
+            },
+            {
+               person: "Number of people",
+               capacity: 2,              
+               isAvailable:"Avaliable",
+               image: require('../assets/icons/bg4.png'),
+            },
+         
        
          ],
          dishes: [
@@ -226,32 +346,63 @@ export const restaurantrecipe = {
        },
        {
          id: 5,
-         name: 'lal-qila-restaurant',
+         name: 'Lal-qila-restaurant',
          image: require('../assets/Restaurant/lal-qila-restaurant.jpg'),
          description: 'Hot and spicy',
-         lng: -85.5324269,
-         lat: 38.2145602,
-         address: '434 second street',
-         stars: 4,
-         reviews: '4.4k',
+         lng: 24.9109556667, 
+         lat: 67.0744146667,
+         address: '10/A M.A.C.H.S، Main Shahrah-e-Faisal',
+         stars: 4.5,
+         reviews: '4.7k',
          category: 'delicious Food',
          Tables: [
             {
-               person: "person- 10",
-               image: require('../assets/images/avatar1.jpg'),
-               reserve:"Booked"
+               person: "Number of people",
+               capacity: 12,              
+               isAvailable:"Avaliable",
+               image: require('../assets/icons/NicePng_kitchen-table-png_9008414.png'),
             },
             {
-               person: 3,
-               image: require('../assets/images/avatar1.jpg'),
+               person: "Number of people",
+               capacity: 10,              
+               isAvailable:"Avaliable",
+               image: require('../assets/icons/kindpng_43048.png'),
+            },
+         
+            {
+               person: "Number of people",
+               capacity: 8,              
+               isAvailable:"Avaliable",
+               image: require('../assets/icons/kindpng_43203.png'),
             },
             {
-               person: 2,
-               image: require('../assets/images/avatar1.jpg'),
+               person: "Number of people",
+               capacity: 6,              
+               isAvailable:"Avaliable",
+               image: require('../assets/icons/bg1.png'),
             },
+            {
+               person: "Number of people",
+               capacity: 4,              
+               isAvailable:"Avaliable",
+               image: require('../assets/icons/bg2.png'),
+            },
+            {
+               person: "Number of people",
+               capacity: 3,              
+               isAvailable:"Avaliable",
+               image: require('../assets/icons/bg3.png'),
+            },
+            {
+               person: "Number of people",
+               capacity: 2,              
+               isAvailable:"Avaliable",
+               image: require('../assets/icons/bg4.png'),
+            },
+         
        
          ],
-         dishes: [
+        dishes: [
              {
                 id: 1,
                 name: 'Kisspng tikka',
@@ -278,3 +429,66 @@ export const restaurantrecipe = {
        }
     ]
 }
+
+// export const categories = [
+   
+//   {
+//       id: 1,
+//       name: 'mexican',
+//       description: 'mexican food',
+//       price: 150,
+//       image:  require('../assets/Restaurant/buffet.png')
+//   },
+//   {
+//    id: 2,
+//    name: 'mexican',
+//    description: 'mexican food',
+//    price: 150,
+//    image:  require('../assets/Restaurant/buffet.png')
+// },
+// {
+//    id: 3,
+//    name: 'mexican',
+//    description: 'mexican food',
+//    price: 150,
+//    image:  require('../assets/Restaurant/buffet.png')
+// },
+// {
+//    id: 4,
+//    name: 'mexican',
+//    description: 'mexican food',
+//    price: 150,
+//    image:  require('../assets/Restaurant/buffet.png')
+// },
+// {
+//    id: 5,
+//    name: 'mexican',
+//    description: 'mexican food',
+//    price: 150,
+//    image:  require('../assets/Restaurant/buffet.png')
+// },
+// {
+//    id: 6,
+//    name: 'mexican',
+//    description: 'mexican food',
+//    price: 150,
+//    image:  require('../assets/Restaurant/buffet.png')
+// },
+// {
+//    id: 7,
+//    name: 'mexican',
+//    description: 'mexican food',
+//    price: 150,
+//    image:  require('../assets/Restaurant/buffet.png')
+// },
+// {
+//    id: 8,
+//    name: 'mexican',
+//    description: 'mexican food',
+//    price: 150,
+//    image:  require('../assets/Restaurant/buffet.png')
+// },
+  
+
+// ]
+ 
