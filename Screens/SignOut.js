@@ -8,6 +8,7 @@ import { useNavigation } from '@react-navigation/native';
 import { COLORS,SIZES, FONTS } from '../Const/theme';
 import * as Icon from "react-native-feather";
 import { themeColors } from '../Styles/theme';
+import { CustomButton } from '../Const/Button';
 
 
 
@@ -34,16 +35,8 @@ const navigation = useNavigation();
     <View style={styles.centeredView}>
   
      <Text style={{ fontSize: hp(4.2),color:COLORS.dark}}>Thank You using this App! </Text>
-      <Pressable
-        style={[styles.button, styles.buttonOpen]}
-        onPress={() => userSignOut()}>
-        <Text style={{ fontSize: hp(2.5)}}>LogOut</Text>
-      </Pressable>
-      <Pressable
-      style={[styles.button, styles.buttonOpen]}
-      onPress={() => navigation.navigate("Home")}>
-      <Text style={{ fontSize: hp(2.5)}}>Home</Text>
-    </Pressable>
+     <CustomButton text='Logout Your Screen' onPressButton={() => userSignOut()} />
+     <CustomButton text='Back to Home' onPressButton={() => navigation.navigate("Home")} />
     </View>
   );
 };
@@ -69,3 +62,21 @@ const styles = StyleSheet.create({
  });
 
 export default SignOut;
+
+
+
+
+
+
+
+
+// <Pressable
+// style={[styles.button, styles.buttonOpen]}
+// onPress={() => userSignOut()}>
+// <Text style={{ fontSize: hp(2.5)}}>LogOut</Text>
+// </Pressable>
+// <Pressable
+// style={[styles.button, styles.buttonOpen]}
+// onPress={() => navigation.navigate("Home")}>
+// <Text style={{ fontSize: hp(2.5)}}>Home</Text>
+// </Pressable>

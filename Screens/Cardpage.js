@@ -2,7 +2,6 @@ import React from 'react';
 import {SafeAreaView, StyleSheet,View, Text, Image,TouchableOpacity} from 'react-native';
 import {  useDispatch, useSelector } from 'react-redux';
 import { COLORS, SIZES, FONTS } from '../Const/theme';
-import { CustomButton } from '../Const/Button';
 import { addMyCart,removetoCart } from '../ReduxFolder/CartSlics';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import { useNavigation } from '@react-navigation/native';
@@ -17,13 +16,6 @@ const CartScreen = () => {
   const navigation = useNavigation();
   
 
-// const getTotal = () => {
-//     let total = 0;
-//     foodItem.map(item => {
-//        total = total + item.qty * item.price;
-//     });
-//     return total;
-//  };
 
 return(
 <SafeAreaView style={Globalstyles.container_1}>

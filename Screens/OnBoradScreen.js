@@ -15,7 +15,7 @@ const ring2padding = useSharedValue(0);
 useEffect(() => {
   ring2padding.value = 0;
   setTimeout(()=> ring2padding.value = withSpring(ring2padding.value+hp(5.5)), 300);
-  setTimeout(()=> navigation.navigate('Home'), 2500)
+  setTimeout(()=> navigation.navigate('SignUp'), 2500)
 },[])
 
 
@@ -25,7 +25,7 @@ return (
    <StatusBar translucent backgroundColor="rgba(0,0,0,0)"/>
 
       {/* logo image with rings */}
-      <Animated.View style={{padding: ring2padding,backgroundColor:"rgba(0,0,0,0.3)",borderRadius:9999}}>
+      <Animated.View style={{padding: ring2padding,backgroundColor:"rgba(0,0,0,0.1)",borderRadius:9999}}>
             <Image source={require('../assets/images/welcome.png')}
                 style={{width: hp(20), height: hp(20)}} />
         </Animated.View>

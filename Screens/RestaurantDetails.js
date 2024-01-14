@@ -127,7 +127,7 @@ const ResturantDetails = ({route,id}) => {
             </View>
             
           <View>
-            <Text style={tw`text-3xl ml-2 mt-4`}>Guest</Text> 
+            <Text style={tw`text-4xl ml-3 mt-4`}>Guest</Text> 
              <View style={tw`flex-row justify-center items-center mt-2 my-4`}>
               <TouchableOpacity onPress={() => setCounter(counter - 1)}>
               <Icon.Minus strokeWidth={4} stroke={themeColors.bgColor(1)} style={tw`mr-4`}/>

@@ -14,9 +14,9 @@ export const Globalstyles = StyleSheet.create({
     padding: 20,
   },
   logo: {
-    width: '90%',
+    width: '80%',
     height: '30%',
-    marginTop: SIZES.padding * 2,
+    marginTop: SIZES.padding * 4,
     marginBottom: SIZES.padding * 4, 
   },
   input: {

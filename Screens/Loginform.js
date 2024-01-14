@@ -55,19 +55,15 @@ return (
   
 
 {/* password field*/}
-<View style={{flexDirection:'row',justifyContent:'center',alignItems:'center'}}>
   <TextInput
       value={Password}
       autoCapitalize='none'
-      secureTextEntry={hidePass ? true : false}
+      secureTextEntry={true}
       style={Globalstyles.input}
       placeholder='Enter your Password'
       onChangeText={(text) => setPassword(text)}/>
-      <TouchableOpacity onPress={() => setHidePass(!hidePass)}>
-       <Icon name={hidePass ? 'eye-slash' : 'eye'} size={16} color="#007BFF" style={{marginRight:10}}/>
-         </TouchableOpacity>
-     </View>
-    </View>
+     
+      </View>
 
 {/* signin button */}
 <CustomButton text='Login' onPressButton={Submit} />

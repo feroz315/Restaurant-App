@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { StyleSheet, View,TextInput,Text,Image,TouchableOpacity } from 'react-native';
+import { StyleSheet, View,TextInput,Text,Image,TouchableOpacity,ScrollView } from 'react-native';
 import { CustomButton } from '../Const/Button';
 import { useNavigation } from '@react-navigation/native';
 import { COLORS } from '../Const/theme';
@@ -28,9 +28,9 @@ const CreditCardForm = () => {
   
   return (
 
-    
+
 <View style={{ flex:1, backgroundColor:COLORS.white, justifyContent:'center',alignItems:'center'}}>
-    
+<ScrollView>
   <TouchableOpacity 
     onPress={()=>navigation.goBack()} 
     style={tw`absolute top-12 left-4 bg-gray-50 p-2 rounded-full shadow`}>
@@ -90,7 +90,8 @@ const CreditCardForm = () => {
             :
             <CustomButton text="Pay Now" onPressButton={() => navigation.navigate("OrderScreen")}/>}
       </View>  
-    </View>
+      </ScrollView>
+      </View>
   );
 };
 
