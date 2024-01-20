@@ -8,6 +8,7 @@ export const COLORS = {
     danger:"#f61244",     //light red  
     lightblack:"#959595", //light black
     orange:"#fb923c",     //orange 
+    redlight:"#bd2c3d",
     // colors
     black: "#1E1F20",
     white: "#FFFFFF",

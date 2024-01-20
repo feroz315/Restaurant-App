@@ -2,8 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { StatusBar,TouchableOpacity,ScrollView,Image,StyleSheet,Text,View,TextInput } from 'react-native';
 import { COLORS,SIZES, FONTS } from '../Const/theme';
 import CategoiesList from '../Categories/CategoiesList';
-import RecipesList from '../Categories/RecipesList';
-// import axios from 'axios';
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 import { BellIcon } from 'react-native-heroicons/outline'
 import { s as tw } from "react-native-wind";
@@ -15,50 +13,23 @@ import RestaurantRow from '../Const/RestaurantRow';
 
 
 const HomeScreen = () => {
-  
-// const [categories,setCatgories ] = useState([]);
-const [activeCategory, setActiveCategory] = useState('Beef');
-const [meals, setMeals] = useState([]);
+const [activeCategory, setActiveCategory] = useState('Fast Food');
 
 
 
 useEffect(() => {
-// getCategories()
-// getRecipes()
-<CategoiesList />
+ <CategoiesList />
 
 },[])
 
+useEffect(() => {
+  <RestaurantRow />
 
-// const getCategories = async () => {
-//   try {
-//     const res = await axios.get("https://www.themealdb.com/api/json/v1/1/categories.php");
-//     console.log(res.data.categories)
-//     if(res && res.data){
-//     setCatgories(res.data.categories)
-//     } 
-//   }catch (error) {
-//     console.error(error);
-
-//  }
-// }
-
-// const getRecipes = async (category= "Beef") => {
-//   try {
-//     const resRecipes = await axios.get(`https://themealdb.com/api/json/v1/1/filter.php?c=${category}`);
-//     console.log(resRecipes.data)
-//     if(resRecipes && resRecipes.data){
-//       setMeals(resRecipes.data.meals)
-//      }
-//   } catch (error) {
-//     console.log(error)
-//   }
-// }
+},[])
 
 const handleChangeCategory = category=>{
   getRecipes(category);
   setActiveCategory(category);
-  setMeals([]);
   
 }
 
@@ -67,12 +38,12 @@ return (
    <View style={tw`flex-1 bg-white`}>
    <StatusBar style="dark" />
 
-   <View style={tw`mx-4 flex-row justify-between items-center mt-12`}>
+   <View style={tw`mx-4 flex-row justify-between items-center mt-14`}>
    <TouchableOpacity>
      <Image source={require('../assets/images/avatar.png')} style={{height: hp(5), width: hp(5.5)}} />
      </TouchableOpacity>
        {/* search bar */}
-       <Search meals={meals}/>
+       <Search />
     <BellIcon size={hp(4)} color="gray" />       
   </View>
 
@@ -85,8 +56,8 @@ return (
  
               
 {/* Categories Data  */ }     
-    <View style={style.view_container}>
-   <Text style={{fontSize:hp(3.2),fontWeight:'600',marginBottom:5}}>Categories</Text>
+  <View style={style.view_container}>
+   <Text style={{fontSize:hp(3.2),fontWeight:'600',marginBottom:5,marginTop:10}}>Categories</Text>
    {[RestaurantCategories].map((item,index)=>{
     return(
    <CategoiesList
@@ -94,7 +65,7 @@ return (
    foodcategories={item.FoodCategories}
    activeCategory={activeCategory} 
    handleChangeCategory={handleChangeCategory}/>
-       )
+    )
    })}
   </View>
     
@@ -103,7 +74,7 @@ return (
        {
       [restaurantrecipe].map((item,index) => {
         return(
-            <RestaurantRow 
+           <RestaurantRow 
             key={index}
             resturants={item.restaurants}
             />
@@ -199,8 +170,8 @@ text: {
 },
 
 view_container: {
-  padding: SIZES.padding * 2,
-  paddingBottom: 10,
+  padding: SIZES.padding * 1,
+  paddingBottom: 5,
 },
 
 shadow: {
@@ -243,6 +214,26 @@ search_bar_text: {
 
 
 export default HomeScreen;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

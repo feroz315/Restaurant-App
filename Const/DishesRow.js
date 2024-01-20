@@ -8,14 +8,16 @@ import { COLORS } from '../Const/theme';
 
 
 
- const DishRow = ({item}) => {
+ const DishRow = ({ item }) => {
  const  dispatch = useDispatch();
  const basketItems = useSelector(state => selectcartItemsbyId(state,item.id));
     
- const handleIncrease = ()=>{
+ const handleIncrease = () => {
         dispatch(addMyCart({...item}));
+        console.log({...item})
     }
-const handleDecrease = ()=>{
+
+const handleDecrease = () => {
         dispatch(removetoCart({id: item.id}))
     }
   return (
@@ -36,7 +38,7 @@ const handleDecrease = ()=>{
                             <TouchableOpacity 
                                 onPress={handleDecrease} 
                                 // disabled={!basketItems.length} 
-                               style={{backgroundColor: COLORS.orange,borderRadius:9999,padding:1}}>
+                               style={{backgroundColor:"#bd2c3d",borderRadius:9999,padding:1}}>
                                 <Icon.Minus strokeWidth={2} height={20} width={20} stroke="white" />
                             </TouchableOpacity>
                             <Text style={tw`px-3 text-black text-lg`}>
@@ -45,7 +47,7 @@ const handleDecrease = ()=>{
                             
                             <TouchableOpacity 
                                 onPress={handleIncrease} 
-                                style={{backgroundColor: COLORS.orange,borderRadius:9999,padding:1}}>
+                                style={{backgroundColor: "#bd2c3d",borderRadius:9999,padding:1}}>
                                 <Icon.Plus strokeWidth={2} height={20} width={20} stroke="white" />
                             </TouchableOpacity>
                         </View>

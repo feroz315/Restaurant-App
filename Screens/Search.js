@@ -41,7 +41,7 @@ if(text){
         <View style={style.inputContainer}>
           <Icon name="search" size={28} />
           <TextInput
-            style={{flex: 1, fontSize: 18}}
+            style={{flex: 1, fontSize: 18,height:50}}
             placeholder="Search"
             value={search}
             onChangeText={(text) => SearchFilter(text)}/>   
@@ -76,7 +76,7 @@ const style = StyleSheet.create({
   inputContainer: {
     flex: 1,
     width:"90%",
-    height: "100%",
+    height: "110%",
     marginLeft:15,
     borderRadius: 30,
     flexDirection: 'row',

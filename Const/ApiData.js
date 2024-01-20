@@ -3,7 +3,7 @@ export const restaurantrecipe = {
     restaurants: [
         {
             id: 1,
-            name: 'al-habib-restaurant',
+            name: 'Al-Habib-Restaurant',
             image: require('../assets/Restaurant/al-habib-restaurant.jpg'),
             description: 'Hot and spicy',
             lng: 24.9141707,
@@ -12,6 +12,7 @@ export const restaurantrecipe = {
             stars: 4,
             reviews: '4.4k',
             category: 'Food ',
+            count: 0,
             dishes: [
                {
                   id: 1,
@@ -88,12 +89,12 @@ export const restaurantrecipe = {
         },
         {
             id: 2,
-            name: 'saltanat-restaurant',
+            name: 'Saltanat-Restaurant',
             image: require('../assets/Restaurant/saltanat-restaurant.jpg'),
             description: 'Hot and spicy',
             lng: -85.5324269,
             lat: 38.2145602,
-            address: 'National Stadium Karsaz Rd',
+            address: 'National Stadium Karsaz',
             stars: 4.6,
             reviews: '4.4k',
             category: 'Hot and Spicy',
@@ -171,12 +172,12 @@ export const restaurantrecipe = {
         },
         {
             id: 3,
-            name: 'Kolachi-restaurant',
+            name: 'Kolachi-Restaurant',
             image: require('../assets/Restaurant/kolachi-restaurant.jpg'),
             description: 'Hot and spicy',
             lng: -85.5324269,
             lat: 38.2145602,
-            address: 'Beach View Phase 8 D.H.A',
+            address: 'Beach View Phase 8 ',
             stars: 4.2,
             reviews: '4.2k',
             category: 'Healthy Food',
@@ -259,12 +260,12 @@ export const restaurantrecipe = {
         },
         {
          id: 4,
-         name: 'shaheen-shinwari',
+         name: 'Shaheen-Shinwari',
          image: require('../assets/Restaurant/shaheen-shinwari-restaurant.jpg'),
          description: 'Hot and spicy',
          lng: -85.5324269,
          lat: 38.2145602,
-         address: 'Gulshan-e-Maymar morr, Karachi.',
+         address: 'Gulshan-e-Maymar Khi',
          stars: 4.3,
          reviews: '4.7k',
          category: 'Healthy Food',
@@ -343,12 +344,12 @@ export const restaurantrecipe = {
        },
        {
          id: 5,
-         name: 'Lal-qila-restaurant',
+         name: 'Lal-Qila-Restaurant',
          image: require('../assets/Restaurant/lal-qila-restaurant.jpg'),
          description: 'Hot and spicy',
          lng: 24.9109556667, 
          lat: 67.0744146667,
-         address: '10/A M.A.C.H.S، Main Shahrah-e-Faisal',
+         address: '10/A Shahrah-e-Faisal',
          stars: 4.5,
          reviews: '4.7k',
          category: 'delicious Food',
@@ -437,7 +438,7 @@ export const RestaurantCategories = {
          restaurants:[
        {
             id: 1,
-            name: 'al-habib-restaurant',
+            name: 'Al-Habib-Restaurant',
             image: require('../assets/Restaurant/al-habib-restaurant.jpg'),
             description: 'Fast Foods',
             lng: 24.9141707,
@@ -446,6 +447,7 @@ export const RestaurantCategories = {
             stars: 4,
             reviews: '4.4k',
             category: 'Food ',
+            count:0,
             dishes: [
                {
                   id: 1,
@@ -473,7 +475,7 @@ export const RestaurantCategories = {
       },
       {
          id: 2,
-         name: 'saltanat',
+         name: 'Saltanat',
          image: require('../assets/Restaurant/saltanat-restaurant.jpg'),
          description: 'Fast Foods',
          lng: 24.9141707,
@@ -519,8 +521,8 @@ export const RestaurantCategories = {
          restaurants: [
        {
             id: 1,
-            name: 'al-habib-restaurant',
-            image: require('../assets/Restaurant/al-habib-restaurant.jpg'),
+            name: 'Kolachi-Restaurant',
+            image: require('../assets/Restaurant/kolachi-restaurant.jpg'),
             description: 'Fast Foods',
             lng: 24.9141707,
             lat: 67.0822045,
@@ -555,8 +557,8 @@ export const RestaurantCategories = {
       },
       {
          id: 2,
-         name: 'saltanat',
-         image: require('../assets/Restaurant/saltanat-restaurant.jpg'),
+         name: 'B-B-Q Tonight',
+         image: require('../assets/Restaurant/bbq-tonight-restaurant.jpg'),
          description: 'Fast Foods',
          lng: 24.9141707,
          lat: 67.0822045,
@@ -595,13 +597,13 @@ export const RestaurantCategories = {
       },
       {
          id:3,
-         name:"Destination",
+         name:"Family",
          image: require('../assets/Restaurant/Destination.png'),
 
          restaurants: [
        {
             id: 1,
-            name: 'al-habib-restaurant',
+            name: 'Al-Habib-Restaurant',
             image: require('../assets/Restaurant/al-habib-restaurant.jpg'),
             description: 'Fast Foods',
             lng: 24.9141707,
@@ -637,8 +639,8 @@ export const RestaurantCategories = {
       },
       {
          id: 2,
-         name: 'saltanat',
-         image: require('../assets/Restaurant/saltanat-restaurant.jpg'),
+         name: 'Saltanat',
+         image: require('../assets/Restaurant/bbq-tonight-restaurant.jpg'),
          description: 'Fast Foods',
          lng: 24.9141707,
          lat: 67.0822045,
@@ -683,7 +685,7 @@ export const RestaurantCategories = {
          restaurants: [
        {
             id: 1,
-            name: 'al-habib-restaurant',
+            name: 'Al-Habib-Restaurant',
             image: require('../assets/Restaurant/al-habib-restaurant.jpg'),
             description: 'Fast Foods',
             lng: 24.9141707,
@@ -719,7 +721,7 @@ export const RestaurantCategories = {
       },
       {
          id: 2,
-         name: 'saltanat',
+         name: 'Saltanat',
          image: require('../assets/Restaurant/saltanat-restaurant.jpg'),
          description: 'Fast Foods',
          lng: 24.9141707,
@@ -759,13 +761,13 @@ export const RestaurantCategories = {
       },
       {
          id:5,
-         name:"B-B-Q ",
+         name:"B-B-Q Tonight",
          image: require('../assets/Restaurant/bbq-tonight-restaurant.jpg'),
 
          restaurants: [
        {
             id: 1,
-            name: 'al-habib-restaurant',
+            name: 'Al-Habib-Restaurant',
             image: require('../assets/Restaurant/al-habib-restaurant.jpg'),
             description: 'Fast Foods',
             lng: 24.9141707,
@@ -801,7 +803,7 @@ export const RestaurantCategories = {
       },
       {
          id: 2,
-         name: 'saltanat',
+         name: 'Saltanat',
          image: require('../assets/Restaurant/saltanat-restaurant.jpg'),
          description: 'Fast Foods',
          lng: 24.9141707,
@@ -847,7 +849,7 @@ export const RestaurantCategories = {
          restaurants: [
        {
             id: 1,
-            name: 'al-habib-restaurant',
+            name: 'Al-Habib-Restaurant',
             image: require('../assets/Restaurant/al-habib-restaurant.jpg'),
             description: 'Fast Foods',
             lng: 24.9141707,
@@ -883,7 +885,7 @@ export const RestaurantCategories = {
       },
       {
          id: 2,
-         name: 'saltanat',
+         name: 'Saltanat',
          image: require('../assets/Restaurant/saltanat-restaurant.jpg'),
          description: 'Fast Foods',
          lng: 24.9141707,
@@ -929,7 +931,7 @@ export const RestaurantCategories = {
          restaurants: [
        {
             id: 1,
-            name: 'al-habib-restaurant',
+            name: 'Al-Habib-Restaurant',
             image: require('../assets/Restaurant/al-habib-restaurant.jpg'),
             description: 'Fast Foods',
             lng: 24.9141707,
@@ -965,7 +967,7 @@ export const RestaurantCategories = {
       },
       {
          id: 2,
-         name: 'saltanat',
+         name: 'Saltanat',
          image: require('../assets/Restaurant/saltanat-restaurant.jpg'),
          description: 'Fast Foods',
          lng: 24.9141707,
@@ -1011,7 +1013,7 @@ export const RestaurantCategories = {
          restaurants: [
        {
             id: 1,
-            name: 'al-habib-restaurant',
+            name: 'Al-Habib-Restaurant',
             image: require('../assets/Restaurant/al-habib-restaurant.jpg'),
             description: 'Fast Foods',
             lng: 24.9141707,
@@ -1047,7 +1049,7 @@ export const RestaurantCategories = {
       },
       {
          id: 2,
-         name: 'saltanat',
+         name: 'Saltanat',
          image: require('../assets/Restaurant/saltanat-restaurant.jpg'),
          description: 'Fast Foods',
          lng: 24.9141707,
@@ -1084,10 +1086,7 @@ export const RestaurantCategories = {
 
          ],
 
-      },
-      
-      
-      
+      },      
 
 
    ]

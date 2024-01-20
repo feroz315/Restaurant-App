@@ -45,7 +45,6 @@ return (
          <Stack.Screen name="SignOut" component={SignOut} />
          <Stack.Screen name="DishRow" component={DishRow} />
          <Stack.Screen name="CategoriesDetails" component={CategoriesDetails} />
-
    
          </Stack.Navigator>
     </NavigationContainer>

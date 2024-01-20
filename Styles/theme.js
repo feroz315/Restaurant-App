@@ -3,6 +3,12 @@ const pallete = [
         text: '#f97316', 
         bgColor: opacity=> `rgba(251, 146, 60, ${opacity})`
     },
+    {
+        // redlight
+        text: "#bd2c3d",
+        bgColor: opacity=> `rgba(248, 113, 113, ${opacity})`
+    },
+
     {   // dark gray
         text: '#334155', 
         bgColor: opacity=> `rgba(30, 41, 59, ${opacity})`,
@@ -24,7 +30,8 @@ const pallete = [
         // red
         text: '#dc2626',
         bgColor: opacity=> `rgba(248, 113, 113, ${opacity})`
-    }
+    },
+  
 
 ]
 export const themeColors = {

@@ -5,6 +5,7 @@ import * as Icon from "react-native-feather";
 import { themeColors } from '../Styles/theme';
 import { s as tw } from "react-native-wind";
 import { useNavigation } from '@react-navigation/native';
+import MasonryList from '@react-native-seoul/masonry-list';
 
 
 
@@ -14,10 +15,10 @@ export default function RestaurantRow({ resturants }) {
 
   return (
     <View>
-      <View style={tw`flex-row justify-between items-center px-4`}>
+      <View style={tw`flex-row justify-between items-center px-4 mb-2`}>
         <View>
-          <Text style={tw`font-bold text-2xl`}>Restaurants</Text>
-          <Text style={tw`text-gray-500 text-base`}>Welcome All Foodies!</Text>
+          <Text style={tw`font-bold text-lg`}>RESTAURANTS</Text>
+          <Text style={tw`text-gray-500 text-base`}>soft and tendori fried chicken</Text>
         </View>
         
         <TouchableOpacity>
@@ -25,20 +26,15 @@ export default function RestaurantRow({ resturants }) {
         </TouchableOpacity>
       </View>
 
-      <ScrollView
-        showsVerticalScrollIndicator={false}
-        contentContainerStyle={{
-        paddingHorizontal:15,
-        }}
-        style={tw`overflow-visible py-5`}>
-       
-        {
-          resturants.map((restaurant, index) => <ResturantCard item={restaurant} key={index}/>)          
-                   
-        } 
-
-       </ScrollView>
-    
+      <MasonryList
+      data={resturants}
+      numColumns={2}
+      showsVerticalScrollIndicator={false}
+      renderItem={({item,index}) => <ResturantCard item={item} key={index}/>}
+      onEndReachedThreshold={0.1}
+      />
+      
     </View>
   )
 }
+

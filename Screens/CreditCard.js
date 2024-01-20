@@ -7,6 +7,7 @@ import { SIZES, FONTS } from '../Const/theme';
 import { s as tw } from "react-native-wind";
 import { themeColors } from '../Styles/theme';
 import * as Icon from "react-native-feather";
+import { customize } from "react-native-wind";
 
 
 const CreditCardForm = () => {
@@ -26,22 +27,40 @@ const CreditCardForm = () => {
 
   },[])
   
+  customize({
+    theme: {
+      colors: {
+        primarycolor: "#bd2c3d",
+        secondary: {
+          light: "#f3f3f3", // Light shade
+          dark: "#212121", // Dark shade
+        },
+      },
+    },
+  });
   return (
 
 
-<View style={{ flex:1, backgroundColor:COLORS.white, justifyContent:'center',alignItems:'center'}}>
+<View style={{ flex:1, backgroundColor:COLORS.white}}>
 <ScrollView>
-  <TouchableOpacity 
-    onPress={()=>navigation.goBack()} 
-    style={tw`absolute top-12 left-4 bg-gray-50 p-2 rounded-full shadow`}>
-    <Icon.ArrowLeft strokeWidth={3} stroke={themeColors.bgColor(1)} />
-   </TouchableOpacity>
-   <View style={{flex:1,alignSelf:'center',width:"100%",marginLeft:10,marginVertical:100}}>
-    <Text style={tw`text-3xl mb-4 text-center w-full rounded-full`}>Payment Details</Text>
+
+<View style={tw`relative py-4 shadow-sm mt-8 bg-primarycolor `}>
+        <TouchableOpacity 
+            onPress={navigation.goBack} 
+            style={tw`absolute z-10 rounded-full p-1 shadow top-5 left-5`}>
+            <Icon.ArrowLeft strokeWidth={4} stroke="white" />
+        </TouchableOpacity>
+        <View>
+            <Text style={tw`text-center font-bold text-3xl text-white`}>Payment Details</Text>
+        </View>
+      </View>   
+ 
+   <View style={{flex:1,alignSelf:'center',width:"100%",marginLeft:15,marginVertical:15}}>
+    <Text style={tw`text-3xl mb-4 text-center w-full rounded-full`}>Card Details</Text>
      <TextInput
         style={styles.input}
         placeholder="Cardholder Name"
-        value={name}
+        value={name}ff
         onChangeText={(text) => setName(text)}
       />
       <TextInput
@@ -84,11 +103,21 @@ const CreditCardForm = () => {
          style={{width:40,height:30,marginLeft:5}}  
          />
        </View>
-      
+            {name == '' || cardNumber == '' || expiration == '' || cvv == '' ? 
+            
+           <TouchableOpacity 
+            onPress={()=> navigation.replace('Home')} 
+            style={tw`mt-4 p-3 rounded-full bg-primarycolor mr-2`}>
+             <Text style={tw`text-white text-center font-bold text-2xl`}>Cancel Order</Text>
+            </TouchableOpacity>
+              :
+            <TouchableOpacity 
+            onPress={()=> navigation.navigate('SignOut')} 
+            style={tw`mt-4 p-3 rounded-full bg-primarycolor`}>
+             <Text style={tw`text-white text-center font-bold text-2xl`}>Check Out</Text>
+            </TouchableOpacity>
+          }
 
-            {name == '' || cardNumber == '' || expiration == '' || cvv == '' ? null
-            :
-            <CustomButton text="Pay Now" onPressButton={() => navigation.navigate("OrderScreen")}/>}
       </View>  
       </ScrollView>
       </View>

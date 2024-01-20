@@ -26,15 +26,16 @@ const MyCartSlice = createSlice({
           },
         emptyCart:(state,action) => {
             state.items = []
-          }
-       },
+          },
+         },
     });
 
 
 
 
-export const { addMyCart,removetoCart,DeleteMyCart,emptyCart } = MyCartSlice.actions;
+export const { addMyCart,removetoCart,DeleteMyCart,emptyCart,addreserve } = MyCartSlice.actions;
 export const selectcartItems = state => state.cart.items;
 export const selectcartItemsbyId = (state,id) => state.cart.items.filter(item => item.id == id);
 export const selectTotal = state => state.cart.items.reduce((total, item) => total = total += item.price,0);
+export const seltable = state => state.cart;
 export default MyCartSlice.reducer;

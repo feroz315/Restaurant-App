@@ -1,4 +1,4 @@
-import { View,Text,ScrollView,Image,TouchableOpacity,Button,StyleSheet,Modal,Pressable, Alert} from 'react-native';
+import { View,Text,ScrollView,Image,TouchableOpacity,Button,TextInput,StyleSheet,Modal,Pressable, Alert} from 'react-native';
 import React, { useEffect,useState} from 'react';
 import { useNavigation, } from '@react-navigation/native';
 import DishRow from '../Const/DishesRow';
@@ -9,9 +9,13 @@ import * as Icon from "react-native-feather";
 import { themeColors } from '../Styles/theme';
 import { s as tw } from "react-native-wind";
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
-import { COLORS } from '../Const/theme';
-import { emptyCart } from '../ReduxFolder/CartSlics';
+import { COLORS,FONTS, SIZES } from '../Const/theme';
+import { emptyCart,addreserve } from '../ReduxFolder/CartSlics';
 import DateTimePickerModal from "react-native-modal-datetime-picker";
+import moment from 'moment/moment';
+import { addProducts } from '../ReduxFolder/HomeSlics';
+ 
+
 
 
 
@@ -21,19 +25,34 @@ const ResturantDetails = ({route,id}) => {
     const [open, setOpen] = useState(false)
     const [counter,setCounter] = useState(0)
     const [isDatePickerVisible, setDatePickerVisibility] = useState(false);
-    
+    const [isTimePickerVisible, setTimePickerVisibility] = useState(false);
+    const [Name, setName] = useState('');
+    const [time, setTime] = useState(moment().format('hh: mm A'));
+    const [selectdate, setSelectDate] = useState(moment(new Date()).format('DD-MM-YYYY'));
+
+
     const navigation = useNavigation();
     let dispatch = useDispatch();
     let item = route.params;
        
-   
     useEffect(() =>{
       if(item && item.id!=id){
       dispatch(emptyCart());
      }   
      dispatch(addresturant({...item})) 
+     console.log({...item})
+
     },[])
-    
+
+    const addTable = () => {
+      dispatch(addProducts({
+        Name,selectdate,time,counter
+      },
+      console.log("data",Name,selectdate,time,counter
+      )
+      ))
+    }
+
     const showDatePicker = () => {
       setDatePickerVisibility(true);
     };
@@ -43,12 +62,29 @@ const ResturantDetails = ({route,id}) => {
     };
   
     const handleConfirm = (date) => {
-     console.warn("A date has been picked:", date);
+      setSelectDate(moment(date).format('DD-MM-YYYY'))
+    //  console.warn("A date has been picked:", date);
      hideDatePicker();
     };
+    
+
+    const showTimePicker = () => {
+      setTimePickerVisibility(true);
+    };
+  
+    const hideTimePicker = () => {
+      setTimePickerVisibility(false);
+    };
+  
+    const handleConfirmTime = (date) => {
+      setTime(moment(date).format('hh: mm A'))
+    //  console.warn("A date has been picked:", date);
+     hideTimePicker();
+    };
+   
    
   return (
-    <>
+    <View>
         <BasketIcon />
         <ScrollView>
             <View style={tw`relative`}>
@@ -72,6 +108,8 @@ const ResturantDetails = ({route,id}) => {
                                 style={tw`h-4 w-4`} /> 
                             <Text style={tw`text-xs`}>
                                 <Text style={tw`text-green-700`}>{item.stars}</Text>
+                                
+
                                 <Text style={tw`text-gray-700`}> ({item.reviews} review)· <Text style={tw`font-semibold text-gray-700`}>{item.type}</Text>
                               </Text>
                             </Text>
@@ -90,16 +128,17 @@ const ResturantDetails = ({route,id}) => {
             style={tw`flex-row justify-between bg-gray-100 mt-3`}>
             <View>
              <Text style={tw`px-4 text-3xl font-bold`}>Reserve</Text>
-             <Text style={tw`px-4 text-lg font-bold`}>your table now !                   
+             <Text style={tw`px-4 text-lg font-bold`}>your have {counter} Guest Now!                   
              </Text>
              </View>
              <Image style={{height:70,width:'30%',borderRadius:9999,marginRight:20}} source={require('../assets/icons/bg2.png')}/>
         
-                </TouchableOpacity>
-                
-         {/* Modal */}
-        <View style={styles.centeredView}>
-         <Modal
+            </TouchableOpacity>
+            
+            {/* Modal */}
+            <View style={styles.centeredView}>
+            <ScrollView>
+            <Modal
              animationType="fade"
              transparent={true}
              visible={modalVisible}
@@ -110,25 +149,58 @@ const ResturantDetails = ({route,id}) => {
            
              <View style={styles.centeredView}>
                <View style={styles.modalView}>
-              <Text style={tw`text-2xl mb-3`}>Book Your Table</Text>
-              <View>
-              <Pressable
-                 style={[styles.button, styles.buttonClose]}
-                 onPress={showDatePicker}>
-                 <Text style={styles.textStyle}>Select your Date</Text>
-               </Pressable>
-               
-              <DateTimePickerModal
+              <View style={tw`flex-row justify-between items-center`}>
+               <Text style={tw`text-3xl text-gray-700 mb-3 mt-2 ml-16`}>Book Your Table</Text>
+               <TouchableOpacity                  
+                onPress={() => setModalVisible(!modalVisible)}>                           
+                <Image source={require('../assets/icons/material.png')} style={tw`w-7 h-7 ml-16`}/>
+                </TouchableOpacity>
+               </View>
+
+          <ScrollView>
+        <Text style={tw`text-base mt-2 ml-2`}>Name </Text>
+          {/* name field*/}
+          <TextInput
+          value={Name}
+          autoCapitalize='none'
+          style={styles.input}
+          placeholder='Enter your Name'
+          onChangeText={(text) => setName(text)} />
+
+        <View style={tw`flex-row justify-center items-center mt-5 ml-3`}>               
+        
+        <TouchableOpacity
+          style={[styles.button, styles.buttonClose]}
+          onPress={showDatePicker}> 
+          <Text style={tw`text-white`}>Select date</Text>
+           <Text style={styles.textStyle}>{selectdate}</Text>
+          
+           </TouchableOpacity>
+
+             <DateTimePickerModal
                 isVisible={isDatePickerVisible}
-                mode="datetime"
+                mode="date"
                 onConfirm={handleConfirm}
-                onCancel={hideDatePicker}
-              />
-            </View>
-            
-          <View>
-            <Text style={tw`text-4xl ml-3 mt-4`}>Guest</Text> 
-             <View style={tw`flex-row justify-center items-center mt-2 my-4`}>
+                onCancel={hideDatePicker}/>  
+
+          <TouchableOpacity
+          style={[styles.button, styles.buttonClose]}
+          onPress={showTimePicker}>
+          <Text style={tw`text-white`}>Pick your Time</Text>
+          <Text style={styles.textStyle}>{time}</Text>
+        
+            </TouchableOpacity>
+
+               <DateTimePickerModal
+                isVisible={isTimePickerVisible}
+                mode="time"
+                onConfirm={handleConfirmTime}
+                onCancel={hideTimePicker}/>
+          </View>
+
+         <View style={tw`ml-12 mt-1`}>
+            <Text style={tw`text-4xl mt-8 ml-16`}>Guest</Text> 
+             <View style={tw`flex-row items-center ml-16 mt-2 my-4`}>
               <TouchableOpacity onPress={() => setCounter(counter - 1)}>
               <Icon.Minus strokeWidth={4} stroke={themeColors.bgColor(1)} style={tw`mr-4`}/>
               </TouchableOpacity>
@@ -139,36 +211,52 @@ const ResturantDetails = ({route,id}) => {
               </View>          
              </View>
 
+            <Pressable
+             style={[styles.button1, styles.buttonClose]}
+             onPress={() => addTable()}>
+             <Text style={styles.textStyle}>Reserve</Text>
+             </Pressable>
+                 <Text style={tw`text-lg text-gray-800 mt-5 ml-2`}>Note: 
+                 Please confirm your Reservation before one hour of your time. 
+                 Otherwise we will consider as cancel your reservation if you will inform us then we will refund your 100% of payment.</Text>
+              
+              <View style={tw`flex-row items-center mt-3`}>                              
                <Pressable
-                 style={[styles.button, styles.buttonClose]}
+                 style={[styles.button1, styles.buttonClose]}
                  onPress={() => setModalVisible(!modalVisible)}>
-                 <Text style={styles.textStyle}>Confirm</Text>
+                 <Text style={styles.textStyle}>Yes I agree</Text>
                </Pressable>
-                </View>
+               </View>
+               </ScrollView>
+                 </View>
              </View>
-           </Modal> 
+             </Modal> 
+             </ScrollView>
         </View>
            
+
          <View style={tw`pb-36 bg-white`}>
                 <Text style={tw`px-4 py-4 text-2xl font-bold`}>Menu</Text>
                 {/* dishes */}
                 {
-                    item.dishes.map((dish,index) => <DishRow item={{...dish}} key={index}/>)                  
+                    item.dishes.map((dish,index) => <DishRow 
+                    item={{...dish}} 
+                    key={index} 
+                    />)                  
                 }
             </View>
       
         </ScrollView>
-    </>
+    </View>
     
   )
 }
 
 const styles = StyleSheet.create({
     centeredView: {
-        flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        marginTop:30,
+        
       },
       messageView:{
         flex: 1,
@@ -177,7 +265,7 @@ const styles = StyleSheet.create({
         marginTop:30,
       },
       modalViewmessage:{
-        margin: 20,
+        margin: 10,
         backgroundColor: 'white',
         borderRadius: 20,
         padding: 35,
@@ -198,10 +286,10 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
         borderRadius: 20,
         padding: 10,
-        alignItems: 'center',
+        alignItems:'flex-start',
         shadowColor: '#000',
-        height:"40%",
-        width:"90%",
+        height:"93%",
+        width:"100%",
         shadowOffset: {
           width: 0,
           height: 2,
@@ -218,23 +306,61 @@ const styles = StyleSheet.create({
       },
       button: {
         borderRadius: 20,
-        padding: 10,
+        height:45,
+        borderWidth:0.5,
+        justifyContent:'center',
+        alignItems:'center',
         elevation: 2,
-        width:"60%"
+        width:"42%",
+        marginLeft:8
       },
+      button1: {
+        borderRadius: 20,
+        height:45,
+        borderWidth:0.5,
+        justifyContent:'center',
+        alignItems:'center',
+        elevation: 2,
+        width:"42%",
+        marginLeft:82,
+        marginTop:10
+      },
+     
       buttonOpen: {
-        backgroundColor: '#F194FF',
+        backgroundColor: '#bd2c3d',
       },
       buttonClose: {
-        backgroundColor: '#2196F3',
+        backgroundColor: '#bd2c3d',
       },
       textStyle: {
         color: 'white',
         fontWeight: 'bold',
         textAlign: 'center',
-        fontSize: 18,
+        fontSize: 16,
 
       },
+      input: {
+        borderRadius: 15,
+        backgroundColor: COLORS.white,
+        borderColor: COLORS.primary,
+        borderWidth: 1,
+        width:'100%',
+        ...FONTS.body3,
+        padding: 10,
+        marginVertical: 8,
+      },
+      inputdate: {
+        borderRadius: 15,
+        backgroundColor: COLORS.white,
+        borderColor: COLORS.primary,
+        borderWidth: 1,
+        width:'45%',
+        ...FONTS.body3,
+        padding: 10,
+        marginVertical: 8,
+      },
+    
+     
       modalText: {
         marginBottom: 15,
         textAlign: 'center',

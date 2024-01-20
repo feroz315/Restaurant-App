@@ -35,7 +35,9 @@ const navigation = useNavigation();
     <View style={styles.centeredView}>
   
      <Text style={{ fontSize: hp(4.2),color:COLORS.dark}}>Thank You using this App! </Text>
-     <CustomButton text='Logout Your Screen' onPressButton={() => userSignOut()} />
+     <Text style={{ fontSize: hp(4.2),color:COLORS.dark}}>Please give Your Feedback! </Text>
+     
+     <CustomButton text='Logout Your Screen' onPressButton={() => userSignOut("Login")} />
      <CustomButton text='Back to Home' onPressButton={() => navigation.navigate("Home")} />
     </View>
   );
@@ -62,6 +64,19 @@ const styles = StyleSheet.create({
  });
 
 export default SignOut;
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

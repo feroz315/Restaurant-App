@@ -29,12 +29,12 @@ let isEven = index%2==0;
     <View style={{shadowColor: themeColors.bgColor(0.2), shadowRadius:7,
      marginRight:6,backgroundColor:COLORS.white,borderRadius:50}}>
     
-  <Image style={{width:'100%',height:150,borderRadius:20,marginLeft:5}} source={item.image}/>
+  <Image style={{width:'100%',height:115,borderRadius:20,marginLeft:5,marginTop:10}} source={item.image}/>
    <View style={tw`px-3 pb-4 space-y-2`}>
-    <Text style={tw`text-2xl pt-2`}>{item.name}</Text>
+    <Text style={tw`text-lg pt-2`}>{item.name}</Text>
     <View style={tw`flex-row items-center space-x-1`}>
         <Image source={require('../assets/icons/star.png')} style={tw`h-4 w-4`} />
-        <Text style={tw`text-base`}>
+        <Text style={tw`text-sm`}>
             <Text style={tw`text-green-700`}> {item.stars}</Text>
             <Text style={tw`text-gray-700`}> ({item.reviews} review) · <Text style={tw`font-semibold text-gray-700`}>{item.type}</Text>
           </Text>
@@ -42,7 +42,7 @@ let isEven = index%2==0;
     </View>
     <View style={tw`flex-row items-center space-x-1`}>
         <Icon.MapPin color="gray" width={15} height={15} />
-        <Text style={tw`text-gray-700 text-base`}> {item.address}</Text>
+        <Text style={tw`text-gray-700 text-sm`}> {item.address}</Text>
     </View>  
     </View>
 
