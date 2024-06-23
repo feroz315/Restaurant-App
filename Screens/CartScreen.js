@@ -50,7 +50,7 @@ export default function BasketScreen() {
     }, [basketItems])
 
    
-    return (
+  return (
     <View style={tw`bg-white flex-1`}>
       {/* top button */}
       <View style={tw`relative py-4 shadow-sm mt-6 bg-primarycolor`}>

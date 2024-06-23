@@ -20,9 +20,10 @@ import { COLORS } from '../Const/theme';
 const handleDecrease = () => {
         dispatch(removetoCart({id: item.id}))
     }
+    
   return (
     <>
-            <View style={tw`flex-row items-center bg-gray-100 p-3 rounded-3xl shadow-2xl mb-3 mx-2`}>
+      <View style={tw`flex-row items-center bg-gray-100 p-3 rounded-3xl shadow-2xl mb-3 mx-2`}>
                 <Image style={{height: 100, width: 100,borderRadius:9999}} source={item.image}/>
                     
                 <View style={tw`flex flex-1 space-y-3`}>

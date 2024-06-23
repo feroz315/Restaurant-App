@@ -1,4 +1,4 @@
-import { View,Text,ScrollView,Image,TouchableOpacity,Button,TextInput,StyleSheet,Modal,Pressable, Alert} from 'react-native';
+import { View,Text,ScrollView,Image,TouchableOpacity,TextInput,StyleSheet,Modal,Pressable, Alert} from 'react-native';
 import React, { useEffect,useState} from 'react';
 import { useNavigation, } from '@react-navigation/native';
 import DishRow from '../Const/DishesRow';
@@ -9,13 +9,12 @@ import * as Icon from "react-native-feather";
 import { themeColors } from '../Styles/theme';
 import { s as tw } from "react-native-wind";
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
-import { COLORS,FONTS, SIZES } from '../Const/theme';
-import { emptyCart,addreserve } from '../ReduxFolder/CartSlics';
+import { COLORS,FONTS } from '../Const/theme';
+import { emptyCart } from '../ReduxFolder/CartSlics';
 import DateTimePickerModal from "react-native-modal-datetime-picker";
 import moment from 'moment/moment';
 import { addProducts } from '../ReduxFolder/HomeSlics';
  
-
 
 
 

@@ -113,7 +113,7 @@ return (
   {/* dishes */}
   <ScrollView 
    showsVerticalScrollIndicator={false}
-   style={tw`bg-white pt-5`}
+   style={tw`bg-white pt-6`}
    contentContainerStyle={{
     paddingBottom: 50
    }}>
@@ -121,7 +121,7 @@ return (
           Object.entries(groupedItems).map(([key, items])=>{
                 return (
                     <View key={key} 
-                    style={tw`flex-row items-center space-x-3 px-3 bg-white rounded-3xl shadow-md`}>                 
+                    style={tw`flex-row items-center space-x-3 px-3 bg-white rounded-3xl py-1`}>                 
                         <Text style={tw`font-bold text-gray-600 text-lg`}>{items.length} x </Text>
                         <Image style={tw`h-14 w-14 rounded-full`} source={items[0]?.image}/>
                         <Text style={tw`flex-1 font-bold text-gray-600 text-lg`}> {items[0]?.name}</Text>
