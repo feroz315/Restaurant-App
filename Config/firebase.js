@@ -2,8 +2,6 @@ import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 import {getDatabase} from "firebase/database";
 
-
-
 const firebaseConfig = {
     apiKey: "AIzaSyCy8UFSrMgpzI_NAjAfMOKKWjRf11v3auE",
     authDomain: "restaurantapp-d5732.firebaseapp.com",
@@ -13,7 +11,6 @@ const firebaseConfig = {
     messagingSenderId: "426929816114",
     appId: "1:426929816114:web:a0ef5d3ff981f1d60a322b"
   };
-
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
