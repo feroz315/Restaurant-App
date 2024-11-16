@@ -1,12 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-// const initialState = {
-//     id: null,
-//     title: null,
-//     imgUrl: null,
-   
-// }
-
 export const categorieSlice = createSlice({
     name:"food",
     initialState:[],
