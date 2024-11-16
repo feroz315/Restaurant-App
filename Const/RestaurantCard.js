@@ -47,6 +47,8 @@ let isEven = index%2==0;
     </View>
 
      </View>
+
+     
     </TouchableWithoutFeedback>
 
     </Animated.View>

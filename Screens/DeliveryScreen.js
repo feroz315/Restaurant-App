@@ -28,8 +28,8 @@ return (
   <MapView
   style={{flex:1}}
   initialRegion={{
-    latitude: 24.8607,
-    longitude: 67.0011,
+    latitude:  24.5576903,
+    longitude: 67.088162,
     latitudeDelta: 0.01,
     longitudeDelta: 0.01,
   }}
@@ -37,8 +37,8 @@ return (
 >
 <Marker
 coordinate={{
-  latitude: 24.8607,
-  longitude: 67.0011
+  latitude: 24.918803,
+  longitude: 67.099762
 }} 
 pinColor={themeColors.bgColor(1)}
 />
@@ -64,7 +64,7 @@ style={tw`p-2 flex-row justify-between items-center rounded-full my-3 mx-2 bg-or
   </View>
     
 <View style={tw`flex-1 ml-3`}>
- <Text style={tw`text-lg font-bold text-white`}>kashif</Text>
+ <Text style={tw`text-lg font-bold text-white`}>xyz</Text>
   <Text style={tw`text-white font-semibold`}>Your Rider</Text>
 </View>
 <View style={tw`flex-row justify-between items-center mr-3`}>

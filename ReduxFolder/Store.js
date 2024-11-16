@@ -34,6 +34,7 @@ export const store = configureStore({
     product: MyProductSlice,
     cart: MyCartSlice,
     resturant:ResturantSlice
+    
   },
 })
 

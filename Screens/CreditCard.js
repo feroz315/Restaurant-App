@@ -112,7 +112,7 @@ const CreditCardForm = () => {
             </TouchableOpacity>
               :
             <TouchableOpacity 
-            onPress={()=> navigation.navigate('SignOut')} 
+            onPress={()=> navigation.navigate('DeliveryScreen')} 
             style={tw`mt-4 p-3 rounded-full bg-primarycolor`}>
              <Text style={tw`text-white text-center font-bold text-2xl`}>Check Out</Text>
             </TouchableOpacity>
