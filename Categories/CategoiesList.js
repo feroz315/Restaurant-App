@@ -11,16 +11,6 @@ const CategoiesList = ({foodcategories,activeCategory}) => {
 const navigation = useNavigation()
 const [bgColor, setBgColor] = useState('')
 
-// function randomHex() {
-//   console.log("Func Called");
-//   let letters = "0123456789ABCDEF";
-//   let color = "#";
-//   for (let i = 0; i < 6; i++) {
-//     color += letters[Math.floor(Math.random() * 16)];
-//   }
-//   return color;
-// }
-
 return (
     <Animated.View entering={FadeInDown.duration(1000).springify()}>
     <ScrollView
@@ -29,8 +19,6 @@ return (
     style={tw`space-x-4`}>
       {
         foodcategories.map((item,index) => {
-          // let isActive = item.strCategory==activeCategory;
-          // let active = bgColor ? COLORS.primary: null; 
             return(
             <TouchableOpacity
                 key={index}
